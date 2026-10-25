@@ -4,7 +4,9 @@ using UnityEngine;
 public class ClickOnObject : MonoBehaviour
 {
     [SerializeField] int _overlayLayerMask;
-    Camera _cam;
+    [Header("Cameras")]
+    [SerializeField] Camera _cam;
+    [SerializeField] Camera _overlayCam;
     [Tooltip("The maximum distance for the ray to find clicked object")]
     float _dist = 100f;
 
@@ -16,6 +18,7 @@ public class ClickOnObject : MonoBehaviour
     {
         _cam = Camera.main;
         _oldParent = transform.parent;
+        _overlayCam.gameObject.layer = _overlayLayerMask;
     }
 
     void Onable()

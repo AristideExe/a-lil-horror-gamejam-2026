@@ -145,12 +145,16 @@ public class RotationScript : MonoBehaviour
     {
         if (_cam == null || _target == null) return;
 
+        // Calcule la distance actuelle entre la caméra et la cible
         float distance = Vector3.Distance(_cam.transform.position, _target.position);
 
         distance -= amount;
         distance = Mathf.Clamp(distance, _minZoom, _maxZoom);
 
+        // Direction de la cible vers la caméra
         Vector3 dir = (_cam.transform.position - _target.position).normalized;
-        _cam.transform.position = _target.position + dir * distance;
+
+        // MODIFICATION : On fixe la caméra et on déplace l'objet (_target) vers elle
+        _target.position = _cam.transform.position - (dir * distance);
     }
 }
