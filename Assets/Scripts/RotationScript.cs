@@ -91,8 +91,25 @@ public class RotationScript : MonoBehaviour
 
     void OnPress(InputAction.CallbackContext ctx)
     {
-        _isDragging = true;
         _lastPos = _pointerPosition.action.ReadValue<Vector2>();
+
+        Ray ray = _cam.ScreenPointToRay(_lastPos);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, 100))
+        {
+            if (hit.transform != transform)
+            {
+                if (TryGetComponent(out ClickOnObject coo))
+                {
+                    coo.enabled = true;
+                    coo.Reset();
+                }
+                this.enabled = false;
+                return;
+            }
+            
+            _isDragging = true;
+        }
     }
 
     void OnRelease(InputAction.CallbackContext ctx)

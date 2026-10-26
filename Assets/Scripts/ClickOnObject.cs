@@ -11,19 +11,31 @@ public class ClickOnObject : MonoBehaviour
     float _dist = 100f;
 
     // Parent Managment
-    Transform _oldParent;
     [SerializeField] Transform _zoomParent;
     [SerializeField] GameObject _blurBackground;
+
+    // Default var
+    Transform _oldParent;
+    Vector3 _oldPos;
+    Quaternion _oldRot;
+    LayerMask _defaultLayerMask;
     void Awake()
     {
         _cam = Camera.main;
         _oldParent = transform.parent;
         _overlayCam.gameObject.layer = _overlayLayerMask;
+        _oldParent = transform.parent;      
+        _oldPos = transform.position;   
+        _oldRot = transform.rotation;   
     }
 
-    void Onable()
+    public void Reset()
     {
-        transform.parent = _oldParent;        
+        gameObject.layer = _defaultLayerMask;
+        _blurBackground.SetActive(false);
+
+        transform.position = _oldPos;
+        transform.rotation = _oldRot;
     }
 
     void Update()
@@ -37,7 +49,7 @@ public class ClickOnObject : MonoBehaviour
             {
                 transform.parent = _zoomParent;
 
-                // set th e object in the overlay layermask so it's on top of the others
+                // set the object in the overlay layermask so it's on top of the others
                 gameObject.layer = _overlayLayerMask;
                 _blurBackground.SetActive(true);
 
