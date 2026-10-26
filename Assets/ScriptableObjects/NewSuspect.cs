@@ -24,8 +24,6 @@ public class SuspectData : ScriptableObject
 
 
     [Header(">====== Suspect ID ======<")]
-    public string[] s_hairColor;
-    public string[] s_eyeColor;
     public string[] s_height;
     public string[] s_weight;
 
@@ -62,8 +60,6 @@ public enum QuestionChoice
     Age,
     Sex,
     Work,
-    HairColor,
-    EyeColor,
     Height,
     Weight,
     Alibi

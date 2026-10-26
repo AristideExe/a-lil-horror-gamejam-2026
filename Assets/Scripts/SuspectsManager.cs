@@ -27,10 +27,7 @@ public class SuspectsManager : MonoBehaviour
 
         for (int i = 0; i < _levels.Length; i++)
             _levelDict.Add(_levels[i], _levelsBound[i]);
-    }
 
-    void Start()
-    {
         _currentCases = _cases[Random.Range(0, _cases.Length)];
         _suspects = _currentCases.suspects;
         _suspectsNb = _suspects.Length;
@@ -58,8 +55,6 @@ public class SuspectsManager : MonoBehaviour
         AddField(new Field {field = suspect.s_age, choice = QuestionChoice.Age});
         AddField(new Field {field = suspect.s_sex, choice = QuestionChoice.Sex});
         AddField(new Field {field = suspect.s_work, choice = QuestionChoice.Work});
-        AddField(new Field {field = suspect.s_hairColor, choice = QuestionChoice.HairColor});
-        AddField(new Field {field = suspect.s_eyeColor, choice = QuestionChoice.EyeColor});
         AddField(new Field {field = suspect.s_height, choice = QuestionChoice.Height});
         AddField(new Field {field = suspect.s_weight, choice = QuestionChoice.Weight});
     
