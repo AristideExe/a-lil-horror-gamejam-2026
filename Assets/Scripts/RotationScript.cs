@@ -1,3 +1,4 @@
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,6 +27,8 @@ public class RotationScript : MonoBehaviour
     [SerializeField] InputActionReference _pointerPress;
     [SerializeField] InputActionReference _scroll;
 
+    [HideInInspector] Rigidbody _rigidbody;
+
     private Vector2 _lastPos;
     private bool _isDragging = false;
 
@@ -38,6 +41,8 @@ public class RotationScript : MonoBehaviour
 
         _pointerPress.action.started += OnPress;
         _pointerPress.action.canceled += OnRelease;
+
+        _rigidbody = _target.GetComponent<Rigidbody>();
     }
 
     private void OnDisable()
@@ -171,7 +176,14 @@ public class RotationScript : MonoBehaviour
         // Direction de la cible vers la caméra
         Vector3 dir = (_cam.transform.position - _target.position).normalized;
 
-        // MODIFICATION : On fixe la caméra et on déplace l'objet (_target) vers elle
-        _target.position = _cam.transform.position - (dir * distance);
+        Vector3 target = _cam.transform.position - (dir * distance);
+
+        _rigidbody.MovePosition(target);
+        _rigidbody.linearVelocity = Vector3.zero;
+        
+        // _rigidbody.AddForce(
+        //     (target - _target.position) * 5f,
+        //     ForceMode.Acceleration
+        // );
     }
 }
