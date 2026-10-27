@@ -18,7 +18,7 @@ public class ClickOnObject : MonoBehaviour
     Transform _oldParent;
     Vector3 _oldPos;
     Quaternion _oldRot;
-    LayerMask _defaultLayerMask;
+    int _defaultLayerMask;
     void Awake()
     {
         _cam = Camera.main;
@@ -27,15 +27,24 @@ public class ClickOnObject : MonoBehaviour
         _oldParent = transform.parent;      
         _oldPos = transform.position;   
         _oldRot = transform.rotation;   
+        _defaultLayerMask = gameObject.layer;
+    }
+
+    public void SetLayer(GameObject obj, int layer)
+    {
+        obj.layer = layer;
+        foreach (Transform child in obj.transform)
+            SetLayer(child.gameObject, layer);
     }
 
     public void Reset()
     {
-        gameObject.layer = _defaultLayerMask;
-        _blurBackground.SetActive(false);
+        // SetLayer(gameObject, _defaultLayerMask);
+        // _blurBackground.SetActive(false);
 
         transform.position = _oldPos;
         transform.rotation = _oldRot;
+        transform.parent = _oldParent;
     }
 
     void Update()
@@ -50,8 +59,8 @@ public class ClickOnObject : MonoBehaviour
                 transform.parent = _zoomParent;
 
                 // set the object in the overlay layermask so it's on top of the others
-                gameObject.layer = _overlayLayerMask;
-                _blurBackground.SetActive(true);
+                // SetLayer(gameObject, _overlayLayerMask);
+                // _blurBackground.SetActive(true);
 
                 transform.localPosition = Vector3.zero;
                 if (TryGetComponent(out RotationScript rs))
