@@ -20,6 +20,8 @@ public class Door : MonoBehaviour, IInteractable
         _openRotation = Quaternion.Euler(transform.eulerAngles + new  Vector3(0, openAngle, 0));
     }
 
+    public string Interaction => "open door";
+
     public void Interact(GameObject interactor)
     {
         if (_coroutine != null) StopCoroutine(_coroutine);

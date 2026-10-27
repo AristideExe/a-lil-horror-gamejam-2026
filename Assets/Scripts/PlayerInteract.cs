@@ -8,6 +8,7 @@ public class PlayerInteract : MonoBehaviour
     private InputAction _interact;
     private Camera _camera;
     private HUD _hud;
+    private IInteractable _focusedInteractable;
 
     void Awake()
     {
@@ -18,19 +19,39 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        Debug.DrawRay(_camera.transform.position, _camera.transform.forward * interactDistance, Color.red, 1f);
-        if (Physics.Raycast(_camera.transform.position, _camera.transform.forward * interactDistance,
-                out RaycastHit hit))
+        if (_focusedInteractable != null)
         {
-            if (hit.collider.TryGetComponent(out IInteractable interactable))
+            _hud.ShowInteractIcon(_focusedInteractable.Interaction);
+            if (_interact.WasPressedThisFrame())
             {
-                _hud.ShowInteractIcon();
-                
-                if (_interact.WasPressedThisFrame() && interactable != null)
+                _focusedInteractable.Interact(gameObject);
+            }
+        }
+        else {
+            Debug.DrawRay(_camera.transform.position, _camera.transform.forward * interactDistance, Color.red, 1f);
+            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward * interactDistance,
+                    out RaycastHit hit))
+            {
+                if (hit.collider.TryGetComponent(out IInteractable interactable))
                 {
-                    interactable.Interact(gameObject);
+                    _hud.ShowInteractIcon(interactable.Interaction);
+
+                    if (_interact.WasPressedThisFrame())
+                    {
+                        interactable.Interact(gameObject);
+                    }
                 }
             }
         }
+    }
+
+    public void SetFocusedInteractable(IInteractable interactable)
+    {
+        _focusedInteractable = interactable;
+    }
+    
+    public void RemoveFocusedInteractable()
+    {
+        _focusedInteractable = null;
     }
 }

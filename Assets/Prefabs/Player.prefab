@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 8766985471400651490}
   - component: {fileID: 2187019737525440351}
   - component: {fileID: 3977170033854812168}
+  - component: {fileID: 3672331819783623020}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -253,6 +254,19 @@ CapsuleCollider:
   m_Height: 1.9
   m_Direction: 1
   m_Center: {x: 0, y: 0.95, z: 0}
+--- !u!114 &3672331819783623020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341834373061836188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e63ac36f02510e518afd0bb8e0dae6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
+  interactDistance: 5
 --- !u!1001 &3437731877670809672
 PrefabInstance:
   m_ObjectHideFlags: 0
