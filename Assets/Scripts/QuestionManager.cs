@@ -21,8 +21,6 @@ public class QuestionManager : MonoBehaviour
         if (i == 3) return QuestionChoice.Age;
         if (i == 4) return QuestionChoice.Sex;
         if (i == 5) return QuestionChoice.Work;
-        if (i == 6) return QuestionChoice.HairColor;
-        if (i == 7) return QuestionChoice.EyeColor;
         if (i == 8) return QuestionChoice.Height;
         if (i == 9) return QuestionChoice.Weight;
         if (i == 10) return QuestionChoice.Alibi;

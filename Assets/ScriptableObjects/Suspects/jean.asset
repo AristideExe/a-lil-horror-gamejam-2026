@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
   m_Name: jean
   m_EditorClassIdentifier: Assembly-CSharp::SuspectData
-  picture: []
+  picture:
+  - {fileID: 21300000, guid: 0893433dcc414c345b32824da99cf253, type: 3}
   s_ID: 0111011
   s_name:
   - jean
@@ -28,12 +29,6 @@ MonoBehaviour:
   - H
   s_work:
   - Prof
-  s_hairColor:
-  - black
-  - jsp
-  s_eyeColor:
-  - black
-  - sp
   s_height:
   - 1.69
   s_weight:
