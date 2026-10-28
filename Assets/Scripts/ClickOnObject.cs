@@ -34,9 +34,6 @@ public class ClickOnObject : MonoBehaviour
         transform.position = _oldPos;
         transform.rotation = _oldRot;
         transform.parent = _oldParent;
-
-        Cursor.lockState = CursorLockMode.Locked;
-        MouseLook.Instance._canLook = true;
     }
 
     void Update()
@@ -55,7 +52,6 @@ public class ClickOnObject : MonoBehaviour
                 {
                     rs._target = transform;
                     rs.enabled = true;
-                    rs.StartScript();
                 }
                 this.enabled = false;
             }

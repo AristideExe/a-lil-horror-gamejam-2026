@@ -58,15 +58,6 @@ public class RotationScript : MonoBehaviour
         _pointerPress.action.Disable();
         _scroll.action.Disable();
     }
-    
-    public void StartScript()
-    {
-        // show the cursor
-        Cursor.lockState = CursorLockMode.Confined;
-    
-        // Lock the rotation of the camera
-        MouseLook.Instance._canLook = false;
-    }
 
     void Update()
     {
