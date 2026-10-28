@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HUD
   interactIcon: {fileID: 9063400428543804283}
   interactText: {fileID: 5147332250008172978}
+  _showInteractIcon: 0
 --- !u!1 &9063400428543804283
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,9 +225,9 @@ RectTransform:
   - {fileID: 8859414684435533624}
   m_Father: {fileID: 3459471027130904320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -239}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 66}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &9214117213662847992

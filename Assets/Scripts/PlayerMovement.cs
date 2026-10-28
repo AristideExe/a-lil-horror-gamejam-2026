@@ -24,31 +24,29 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (_controller.enabled)
-        {
-            Vector2 move = _move.ReadValue<Vector2>();
-            Vector3 movement = transform.forward * move.y + transform.right * move.x;
-            movement.y = 0;
-            movement = movement * speed;
+        if (!_controller.enabled) return;
+        Vector2 move = _move.ReadValue<Vector2>();
+        Vector3 movement = transform.forward * move.y + transform.right * move.x;
+        movement.y = 0;
+        movement = movement * speed;
 
-            _currentMoveVelocity = Vector3.Lerp(_currentMoveVelocity, movement, _smoothSpeed * Time.deltaTime);
-            _controller.Move(_currentMoveVelocity * Time.deltaTime);
+        _currentMoveVelocity = Vector3.Lerp(_currentMoveVelocity, movement, _smoothSpeed * Time.deltaTime);
+        _controller.Move(_currentMoveVelocity * Time.deltaTime);
 
-            // --- Animation --- //
-            int sign = Vector3.Dot(movement, transform.forward) < 0 ? -1 : 1; // - Player move forward => 1
-            // - Player move backward => -1
-            float targetValue = sign * _controller.velocity.magnitude / speed;
-            _currentAnimVelocity = Mathf.Lerp(_currentAnimVelocity, targetValue, _smoothSpeed * Time.deltaTime);
-            _animator.SetFloat(_velocityHash, _currentAnimVelocity);
+        // --- Animation --- //
+        int sign = Vector3.Dot(movement, transform.forward) < 0 ? -1 : 1; // - Player move forward => 1
+        // - Player move backward => -1
+        float targetValue = sign * _controller.velocity.magnitude / speed;
+        _currentAnimVelocity = Mathf.Lerp(_currentAnimVelocity, targetValue, _smoothSpeed * Time.deltaTime);
+        _animator.SetFloat(_velocityHash, _currentAnimVelocity);
 
-            if (_controller.velocity.magnitude < 0.1f)
-                _animator.SetBool(_walkingHash, false);
-            else
-                _animator.SetBool(_walkingHash, true);
+        if (_controller.velocity.magnitude < 0.1f)
+            _animator.SetBool(_walkingHash, false);
+        else
+            _animator.SetBool(_walkingHash, true);
 
-            // security
-            _animator.transform.localPosition = Vector3.zero;
-        }
+        // security
+        _animator.transform.localPosition = Vector3.zero;
 
     }
 

@@ -40,4 +40,21 @@ public class MouseLook : MonoBehaviour
         player.Rotate(Vector3.up * (look.x * mouseSensivityX));
         transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
     }
+    
+    public void SetLookDirection(Vector3 lookDirection)
+    {
+        player.transform.rotation = Quaternion.LookRotation(lookDirection);
+    }
+
+    public void DisableLook()
+    {
+        _canLook = false;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void EnableLook()
+    {
+        _canLook = true;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 }
