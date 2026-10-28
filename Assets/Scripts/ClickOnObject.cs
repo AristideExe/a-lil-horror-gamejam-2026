@@ -3,16 +3,13 @@ using UnityEngine;
 
 public class ClickOnObject : MonoBehaviour
 {
-    [SerializeField] int _overlayLayerMask;
     [Header("Cameras")]
     [SerializeField] Camera _cam;
-    [SerializeField] Camera _overlayCam;
     [Tooltip("The maximum distance for the ray to find clicked object")]
     float _dist = 100f;
 
     // Parent Managment
     [SerializeField] Transform _zoomParent;
-    [SerializeField] GameObject _blurBackground;
 
     // Default var
     Transform _oldParent;
@@ -23,18 +20,10 @@ public class ClickOnObject : MonoBehaviour
     {
         _cam = Camera.main;
         _oldParent = transform.parent;
-        _overlayCam.gameObject.layer = _overlayLayerMask;
         _oldParent = transform.parent;      
         _oldPos = transform.position;   
         _oldRot = transform.rotation;   
         _defaultLayerMask = gameObject.layer;
-    }
-
-    public void SetLayer(GameObject obj, int layer)
-    {
-        obj.layer = layer;
-        foreach (Transform child in obj.transform)
-            SetLayer(child.gameObject, layer);
     }
 
     public void Reset()
@@ -45,6 +34,9 @@ public class ClickOnObject : MonoBehaviour
         transform.position = _oldPos;
         transform.rotation = _oldRot;
         transform.parent = _oldParent;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        MouseLook.Instance._canLook = true;
     }
 
     void Update()
@@ -58,15 +50,12 @@ public class ClickOnObject : MonoBehaviour
             {
                 transform.parent = _zoomParent;
 
-                // set the object in the overlay layermask so it's on top of the others
-                // SetLayer(gameObject, _overlayLayerMask);
-                // _blurBackground.SetActive(true);
-
                 transform.localPosition = Vector3.zero;
                 if (TryGetComponent(out RotationScript rs))
                 {
                     rs._target = transform;
                     rs.enabled = true;
+                    rs.StartScript();
                 }
                 this.enabled = false;
             }

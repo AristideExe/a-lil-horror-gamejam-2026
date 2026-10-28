@@ -1,11 +1,15 @@
+using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MouseLook : MonoBehaviour
 {
+    public static MouseLook Instance {private set; get;}
+
     [SerializeField] private Transform player;
     [SerializeField] private float mouseSensivityX = 50f;
     [SerializeField] private float mouseSensivityY = 50f;
+    [HideInInspector] public bool _canLook;
     
     private InputAction _look;
     private float _xRotation;
@@ -13,6 +17,11 @@ public class MouseLook : MonoBehaviour
     void Awake()
     {
         _look = InputSystem.actions.FindAction("Look");
+
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+
+        _canLook = true;
     }
 
     void Start()
@@ -22,6 +31,7 @@ public class MouseLook : MonoBehaviour
     
     void Update()
     {
+        if (!_canLook) return;
         Vector2 look = _look.ReadValue<Vector2>() * Time.deltaTime;
         
         _xRotation -= look.y * mouseSensivityY;

@@ -1,17 +1,16 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class QuestionManager : MonoBehaviour
 {
-    public static QuestionManager Instance {private set; get;}
+    private SuspectData _suspect;
+    [SerializeField] int _index = 0;
 
-    void Awake()
+    void Start()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        _suspect = SuspectsManager.Instance._suspects[_index];
     }
-
-    [SerializeField] SuspectData _currentSuspect;
 
     QuestionChoice IntToChoice(int i)
     {
@@ -29,10 +28,12 @@ public class QuestionManager : MonoBehaviour
 
     public void AskQuestion(int choice)
     {
-        Debug.Log($"Ask Question about {IntToChoice(choice)} {choice}");
         DialogueSystem.Instance.ShowDialogue(
-            $"{_currentSuspect.s_firstName[0]} {_currentSuspect.s_name[0]}",
-            _currentSuspect.allQuestions[IntToChoice(choice)]
+            $"{_suspect.s_firstName[0]} {_suspect.s_name[0]}",
+            _suspect.allQuestions[IntToChoice(choice)]
         );
+
+        if (TryGetComponent(out ClickOnObject cob))
+            cob.Reset();
     } 
 }

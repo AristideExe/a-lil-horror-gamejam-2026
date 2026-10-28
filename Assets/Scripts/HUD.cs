@@ -8,7 +8,7 @@ public class HUD : MonoBehaviour
     [SerializeField] private GameObject interactIcon;
     [SerializeField] private TextMeshProUGUI interactText;
 
-    private bool _showInteractIcon;
+    [SerializeField] private bool _showInteractIcon;
     private string _interaction;
     private bool _shouldShowIcon;
 

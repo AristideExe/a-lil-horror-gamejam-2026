@@ -108,8 +108,9 @@ public class SuspectsManager : MonoBehaviour
 
             // Get a field to lie in the list and create an answer
             // Add the alibi
-            rng = Random.Range(0, fields[0].field.Length);
+            rng = Random.Range(1, fields[0].field.Length);
             suspect.allQuestions[fields[0].choice] = GenerateAnswer(fields[0].choice, fields[0].field[rng]);
+            // Debug.Log($"LIE => {fields[0].choice} : {GenerateAnswer(fields[0].choice, fields[0].field[rng])}");
             fields.Remove(fields[0]);
 
             for (int i = 1; i < rng; i++)
@@ -120,12 +121,12 @@ public class SuspectsManager : MonoBehaviour
                 Field rng_field = fields[rng];
 
                 // Random answer
-                rng = Random.Range(0, rng_field.field.Length);
+                rng = Random.Range(1, rng_field.field.Length);
                 string rng_answer = rng_field.field[rng];
 
                 // Add the answer
                 suspect.allQuestions[rng_field.choice] = GenerateAnswer(rng_field.choice, rng_answer);
-                // Debug.Log($"{rng_field.choice} : {GenerateAnswer(rng_field.choice, rng_answer)}");
+                // Debug.Log($"LIE => {rng_field.choice} : {GenerateAnswer(rng_field.choice, rng_answer)}");
 
                 fields.Remove(rng_field);
             }

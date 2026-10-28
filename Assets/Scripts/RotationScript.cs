@@ -19,7 +19,7 @@ public class RotationScript : MonoBehaviour
 
     [Header("Zoom")]
     [SerializeField] float _zoomSpeed = 0.5f;
-    [SerializeField] float _minZoom = 2f;
+    [SerializeField] float _minZoom = .5f;
     [SerializeField] float _maxZoom = 10f;
 
     [Header("Input")]
@@ -41,6 +41,7 @@ public class RotationScript : MonoBehaviour
 
         _pointerPress.action.started += OnPress;
         _pointerPress.action.canceled += OnRelease;
+        _pointerPosition.action.performed += MoveCursor;
 
         _rigidbody = _target.GetComponent<Rigidbody>();
     }
@@ -50,6 +51,8 @@ public class RotationScript : MonoBehaviour
         // Remove the function associated to the events
         _pointerPress.action.started -= OnPress;
         _pointerPress.action.canceled -= OnRelease;
+        _pointerPosition.action.performed -= MoveCursor;
+
 
         _pointerPosition.action.Disable();
         _pointerPress.action.Disable();
@@ -58,7 +61,11 @@ public class RotationScript : MonoBehaviour
     
     public void StartScript()
     {
-        _target.rotation = Quaternion.Euler(+10, 0, 0);
+        // show the cursor
+        Cursor.lockState = CursorLockMode.Confined;
+    
+        // Lock the rotation of the camera
+        MouseLook.Instance._canLook = false;
     }
 
     void Update()
@@ -66,17 +73,28 @@ public class RotationScript : MonoBehaviour
         HandleRotation();
         HandleZoomPC();
         HandleZoomMobile();
-
-        // exit the zoomScript
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(TryGetComponent(out ClickOnObject coo))
-                coo.enabled = true;
-            this.enabled = false;
-        }
     }
 
     // ===================== ROTATION =====================
+
+    void MoveCursor(InputAction.CallbackContext ctx)
+    {
+        // Vector2 cursorPos = _pointerPosition.action.ReadValue<Vector2>();
+        // // Still can rotate if the cursor is not on camera
+        // Ray ray = _cam.ScreenPointToRay(cursorPos);
+        // if (!_isDragging && Physics.Raycast(ray, out RaycastHit hit, 100))
+        // {
+        //     if (hit.transform != transform)
+        //     {
+        //         MouseLook.Instance._canLook = true;
+        //     }
+        //     else
+        //     {
+        //         MouseLook.Instance._canLook = false;
+        //         Cursor.lockState = CursorLockMode.Confined;
+        //     }
+        // }
+    }
 
     void HandleRotation()
     {
