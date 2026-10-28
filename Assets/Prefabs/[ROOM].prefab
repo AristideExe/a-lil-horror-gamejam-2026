@@ -238,9 +238,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6100f6f8970efef4c9cdfc5b86cd3996, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8383471067583666023}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6100f6f8970efef4c9cdfc5b86cd3996, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 941835807579136517}
   m_SourcePrefab: {fileID: 100100000, guid: 6100f6f8970efef4c9cdfc5b86cd3996, type: 3}
 --- !u!1 &1595791737082828165 stripped
 GameObject:
@@ -268,18 +265,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.3078568, z: 0.91448426}
   m_Center: {x: -0, y: 0.63965786, z: -0.04275787}
---- !u!114 &941835807579136517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595791737082828165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa7337183a68799bb79615edddf1be4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Chair
 --- !u!4 &2120830995759566655 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6100f6f8970efef4c9cdfc5b86cd3996, type: 3}
@@ -690,6 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa7337183a68799bb79615edddf1be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Chair
+  standUpDistance: 1
 --- !u!4 &4194459172435429602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6100f6f8970efef4c9cdfc5b86cd3996, type: 3}
