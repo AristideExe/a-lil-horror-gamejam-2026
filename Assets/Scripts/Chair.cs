@@ -30,6 +30,7 @@ public class Chair : MonoBehaviour, IInteractable
                 playerMovement.EnableMovement();
                 MouseLook.Instance.EnableLook();
                 _playerSat = false;
+                Camera.main.transform.localPosition = new Vector3(0, 1.66f, 0); 
             }
             else
             {
@@ -37,10 +38,14 @@ public class Chair : MonoBehaviour, IInteractable
                 MouseLook.Instance.DisableLook();
                 playerInteract.SetFocusedInteractable(this);               
                 MouseLook.Instance.SetLookDirection(transform.forward);
-                _oldPlayerPosition = interactor.transform.position;
-                interactor.transform.position = transform.position;
+                _oldPlayerPosition = interactor.transform.position ;
+                interactor.transform.position = transform.position + transform.forward * 0.6f + Vector3.up * 0.25f; // Move the player slightly forward to sit on the chair
                 _playerSat = true;
+                Camera.main.transform.localPosition = new Vector3(0, 1.25f, -0.25f); // Adjust the camera position to simulate sitting
             }
+
+            if (interactor.transform.GetChild(1).TryGetComponent(out Animator animator))
+                    animator.SetBool("sit", _playerSat);
         }
     }
 }

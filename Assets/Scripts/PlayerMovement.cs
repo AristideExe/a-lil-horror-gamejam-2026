@@ -35,12 +35,12 @@ public class PlayerMovement : MonoBehaviour
 
         // --- Animation --- //
         int sign = Vector3.Dot(movement, transform.forward) < 0 ? -1 : 1; // - Player move forward => 1
-        // - Player move backward => -1
-        float targetValue = sign * _controller.velocity.magnitude / speed;
+                                                                          // - Player move backward => -1
+        float targetValue = sign * speed;
         _currentAnimVelocity = Mathf.Lerp(_currentAnimVelocity, targetValue, _smoothSpeed * Time.deltaTime);
         _animator.SetFloat(_velocityHash, _currentAnimVelocity);
 
-        if (_controller.velocity.magnitude < 0.1f)
+        if (_controller.velocity.magnitude < speed * 0.5f)
             _animator.SetBool(_walkingHash, false);
         else
             _animator.SetBool(_walkingHash, true);
