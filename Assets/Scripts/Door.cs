@@ -2,17 +2,26 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Door : MonoBehaviour, IInteractable
 {
     [SerializeField] private float manualOpenSpeed = 4f;
     [SerializeField] private float automaticCloseSpeed = 2f;
     [SerializeField] private float openAngle = 90f;
     [SerializeField] private float waitBeforeClose = 2f;
+    [SerializeField] private AudioClip openDoorSound;
+    [SerializeField] private AudioClip closeDoorSound;
     
     private bool _isOpen;
     private Quaternion _closedRotation;
     private Quaternion _openRotation;
     private Coroutine _coroutine;
+    private AudioSource _audioSource;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -32,6 +41,7 @@ public class Door : MonoBehaviour, IInteractable
     {
         Quaternion targetRotation = _isOpen ? _closedRotation : _openRotation;
         float speed =  manual ? manualOpenSpeed : automaticCloseSpeed;
+        _audioSource.PlayOneShot(_isOpen ? closeDoorSound : openDoorSound);
         _isOpen = !_isOpen;
 
         while (Quaternion.Angle(transform.rotation, targetRotation) > 0.01f)
