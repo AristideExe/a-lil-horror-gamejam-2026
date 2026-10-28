@@ -826,7 +826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3040e86bfee7813448440f8e3c611d92, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1363,7 +1363,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.24
+      value: -2.26
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1401,6 +1401,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8095790789413454965, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a27491dc78a40f633a9db22a7ceb202f, type: 2}
     - target: {fileID: -6599271472219001609, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1413,25 +1417,41 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5335886233976507169, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2097191453441680281}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
+      addedObject: {fileID: 7424622920354303768}
+    - targetCorrespondingSourceObject: {fileID: 5335886233976507169, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7761077132796225036}
+      addedObject: {fileID: 6665168060339213702}
   m_SourcePrefab: {fileID: 100100000, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
---- !u!1 &8260959349140305900 stripped
+--- !u!1 &3776650169256182172 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5335886233976507169, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
   m_PrefabInstance: {fileID: 9107891514146425533}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2097191453441680281
+--- !u!114 &7424622920354303768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3776650169256182172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c127140e33a2006c2ad78efe7471833b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Door
+  manualOpenSpeed: 4
+  automaticCloseSpeed: 2
+  openAngle: 90
+  waitBeforeClose: 2
+--- !u!65 &6665168060339213702
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8260959349140305900}
+  m_GameObject: {fileID: 3776650169256182172}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1444,24 +1464,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0481431, y: 3.8131213, z: 0.2593452}
-  m_Center: {x: 0.93369186, y: -1.9868386e-23, z: -1.9868386e-23}
---- !u!114 &7761077132796225036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8260959349140305900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c127140e33a2006c2ad78efe7471833b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Door
-  manualOpenSpeed: 4
-  automaticCloseSpeed: 2
-  openAngle: 90
-  waitBeforeClose: 2
+  m_Size: {x: 0.019593645, y: 0.0027957282, z: 0.03828099}
+  m_Center: {x: 0.009392204, y: -0.00026428577, z: 6.301063e-11}
 --- !u!4 &8786244073515347286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f8e4fb86cff69c147886ade618342b2c, type: 3}
