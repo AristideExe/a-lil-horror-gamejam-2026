@@ -27,7 +27,7 @@ public class RotationScript : MonoBehaviour
     [SerializeField] InputActionReference _pointerPress;
     [SerializeField] InputActionReference _scroll;
 
-    [HideInInspector] Rigidbody _rigidbody;
+    // [HideInInspector] Rigidbody _rigidbody;
 
     private Vector2 _lastPos;
     private bool _isDragging = false;
@@ -41,9 +41,8 @@ public class RotationScript : MonoBehaviour
 
         _pointerPress.action.started += OnPress;
         _pointerPress.action.canceled += OnRelease;
-        _pointerPosition.action.performed += MoveCursor;
 
-        _rigidbody = _target.GetComponent<Rigidbody>();
+        // _rigidbody = _target.GetComponent<Rigidbody>();
     }
 
     private void OnDisable()
@@ -51,7 +50,6 @@ public class RotationScript : MonoBehaviour
         // Remove the function associated to the events
         _pointerPress.action.started -= OnPress;
         _pointerPress.action.canceled -= OnRelease;
-        _pointerPosition.action.performed -= MoveCursor;
 
 
         _pointerPosition.action.Disable();
@@ -67,25 +65,6 @@ public class RotationScript : MonoBehaviour
     }
 
     // ===================== ROTATION =====================
-
-    void MoveCursor(InputAction.CallbackContext ctx)
-    {
-        // Vector2 cursorPos = _pointerPosition.action.ReadValue<Vector2>();
-        // // Still can rotate if the cursor is not on camera
-        // Ray ray = _cam.ScreenPointToRay(cursorPos);
-        // if (!_isDragging && Physics.Raycast(ray, out RaycastHit hit, 100))
-        // {
-        //     if (hit.transform != transform)
-        //     {
-        //         MouseLook.Instance._canLook = true;
-        //     }
-        //     else
-        //     {
-        //         MouseLook.Instance._canLook = false;
-        //         Cursor.lockState = CursorLockMode.Confined;
-        //     }
-        // }
-    }
 
     void HandleRotation()
     {
@@ -187,8 +166,10 @@ public class RotationScript : MonoBehaviour
 
         Vector3 target = _cam.transform.position - (dir * distance);
 
-        _rigidbody.MovePosition(target);
-        _rigidbody.linearVelocity = Vector3.zero;
+        // _rigidbody.MovePosition(target);
+        // _rigidbody.linearVelocity = Vector3.zero;
+
+        transform.position = target;
         
         // _rigidbody.AddForce(
         //     (target - _target.position) * 5f,

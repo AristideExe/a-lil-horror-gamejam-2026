@@ -119,6 +119,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &151006870 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9212737099973029984, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
+  m_PrefabInstance: {fileID: 685270628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &255928520 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2915565442281525899, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
+  m_PrefabInstance: {fileID: 685270628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 685270629}
+  m_Father: {fileID: 151006870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &653554778
 GameObject:
@@ -354,7 +364,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -390,6 +400,10 @@ PrefabInstance:
     - target: {fileID: 453158015654614337, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266730771886105044, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2767856044117247949, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -458,21 +472,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2767856044117247949, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 9212737099973029984, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 584156548}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
---- !u!4 &685270629 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2767856044117247949, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
-  m_PrefabInstance: {fileID: 685270628}
-  m_PrefabAsset: {fileID: 0}
---- !u!20 &685270630 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 144239489837703377, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
-  m_PrefabInstance: {fileID: 685270628}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &710871551 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4838250636245924293, guid: 83c220e30f4f45044b236ce5c37a1702, type: 3}
@@ -858,6 +862,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1270117451 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1266730771886105044, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
+  m_PrefabInstance: {fileID: 685270628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1328065847 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8974603557503570993, guid: 83c220e30f4f45044b236ce5c37a1702, type: 3}
@@ -1166,11 +1175,11 @@ PrefabInstance:
     - target: {fileID: 3630814770851375439, guid: 0b73a4878d259e14d8ba584ca6525fdf, type: 3}
       propertyPath: _cam
       value: 
-      objectReference: {fileID: 685270630}
+      objectReference: {fileID: 1270117451}
     - target: {fileID: 3630814770851375439, guid: 0b73a4878d259e14d8ba584ca6525fdf, type: 3}
       propertyPath: _overlayCam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 255928520}
     - target: {fileID: 3630814770851375439, guid: 0b73a4878d259e14d8ba584ca6525fdf, type: 3}
       propertyPath: _zoomParent
       value: 
@@ -1178,6 +1187,10 @@ PrefabInstance:
     - target: {fileID: 3630814770851375439, guid: 0b73a4878d259e14d8ba584ca6525fdf, type: 3}
       propertyPath: _blurBackground
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630814770851375439, guid: 0b73a4878d259e14d8ba584ca6525fdf, type: 3}
+      propertyPath: _overlayLayerMask
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3893602497889022704, guid: 0b73a4878d259e14d8ba584ca6525fdf, type: 3}
       propertyPath: m_AnchorMax.y

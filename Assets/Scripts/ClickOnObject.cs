@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class ClickOnObject : MonoBehaviour
 {
+    [SerializeField] int _overlayLayerMask;
     [Header("Cameras")]
     [SerializeField] Camera _cam;
+    [SerializeField] Camera _overlayCam;
     [Tooltip("The maximum distance for the ray to find clicked object")]
     float _dist = 100f;
 
@@ -24,6 +26,17 @@ public class ClickOnObject : MonoBehaviour
         _oldPos = transform.position;   
         _oldRot = transform.rotation;   
         _defaultLayerMask = gameObject.layer;
+        
+        _overlayCam.gameObject.layer = _overlayLayerMask;
+    }
+
+    void SetLayer(GameObject obj, int layer)
+    {
+        obj.layer = layer;
+        foreach (Transform child in obj.transform)
+        {
+            SetLayer(child.gameObject, layer);
+        }
     }
 
     public void Reset()
@@ -46,6 +59,9 @@ public class ClickOnObject : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 transform.parent = _zoomParent;
+
+                // Set the layer of the object and its children to the overlay layer
+                SetLayer(gameObject, _overlayLayerMask);
 
                 transform.localPosition = Vector3.zero;
                 if (TryGetComponent(out RotationScript rs))
