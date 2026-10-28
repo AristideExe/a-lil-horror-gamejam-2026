@@ -29,8 +29,8 @@ public class PlayerInteract : MonoBehaviour
         }
         else {
             Debug.DrawRay(_camera.transform.position, _camera.transform.forward * interactDistance, Color.red, 1f);
-            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward * interactDistance,
-                    out RaycastHit hit))
+            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward,
+                    out RaycastHit hit, interactDistance))
             {
                 if (hit.collider.TryGetComponent(out IInteractable interactable))
                 {
