@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b385e23172be854997a36a9c90678ce, type: 3}
+  m_Name: case_2
+  m_EditorClassIdentifier: Assembly-CSharp::CaseData
+  id: 2
+  context: "L'AGRESSION DE LA SALLE FITZONE\nUn jeudi soir de novembre, \xE0 22h10,
+    l'agente d'entretien trouve le propri\xE9taire de la salle FitZone, Bruno Adler
+    (52 ans), inconscient au pied du rack \xE0 squats : il a re\xE7u un coup d'halt\xE8re
+    \xE0 la t\xEAte. Hospitalis\xE9 mais stable, il se souvient seulement d'une odeur
+    sucr\xE9e et d'une silhouette dans le miroir, juste avant le coup. La salle fermait
+    \xE0 22h et dix personnes (abonn\xE9s et employ\xE9s) \xE9taient encore dans
+    le b\xE2timent entre 21h30 et 22h. L'agresseur est parti en laissant l'alarme
+    de la porte de secours sonner quelques secondes."
+  facts: "Fermeture : 22h00\nDernier badge de sortie enregistr\xE9 : 21h48\nAlarme
+    de la porte de secours d\xE9clench\xE9e \xE0 21h55 (quelques secondes)\nHalt\xE8re
+    de 5 kg, poign\xE9e essuy\xE9e\nPoudre blanche (magn\xE9sie) au sol, dans le
+    couloir des vestiaires\nLa victime se souvient d'une odeur sucr\xE9e (parfum)"
+  suspects:
+  - {fileID: 11400000, guid: 550a7c7fbfda35d408dda0d841521bef, type: 2}

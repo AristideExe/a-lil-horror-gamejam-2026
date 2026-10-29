@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b385e23172be854997a36a9c90678ce, type: 3}
+  m_Name: case_1
+  m_EditorClassIdentifier: Assembly-CSharp::CaseData
+  id: 1
+  context: "LE COFFRE VID\xC9 DU MARCH\xC9 VERT\nUn samedi soir de mars, apr\xE8s
+    la fermeture du supermarch\xE9 Le March\xE9 Vert, la caisse centrale (11 480
+    \u20AC en esp\xE8ces) a disparu du bureau du g\xE9rant entre 20h50 et 21h15.
+    Le coffre a \xE9t\xE9 ouvert avec le bon code, sans effraction. Le magasin \xE9tait
+    ferm\xE9 au public depuis 20h30, mais dix personnes (personnel ou fournisseurs)
+    \xE9taient encore sur place. Le voleur est reparti par la porte arri\xE8re avec
+    l'argent dans un sac."
+  facts: "Fermeture au public : 20h30\nIl pleut depuis 20h45\nBadge n\xB07 utilis\xE9
+    sur la porte du bureau \xE0 20h48\nCam\xE9ra du parking coup\xE9e \xE0 20h52\nUn
+    homme est film\xE9 sortant par la porte arri\xE8re \xE0 21h04 avec un sac de
+    sport bleu\nLe portail du quai de livraison a claqu\xE9 vers 21h00"
+  suspects:
+  - {fileID: 11400000, guid: 9fef2be5fecd83b45a72f628260ecc27, type: 2}

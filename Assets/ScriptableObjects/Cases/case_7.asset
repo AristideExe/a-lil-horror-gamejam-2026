@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b385e23172be854997a36a9c90678ce, type: 3}
+  m_Name: case_7
+  m_EditorClassIdentifier: Assembly-CSharp::CaseData
+  id: 7
+  context: "LA VALISE VOL\xC9E DE LA GARE DE VILLENEUVE\nUn lundi de novembre, le
+    joaillier Salomon Weil d\xE9pose \xE0 16h50 une valise grise contenant 60 000
+    \u20AC de bijoux dans le casier de consigne n\xB0318. \xC0 17h40, il revient
+    et trouve le casier vide. La valise est retrouv\xE9e vide \xE0 18h05 dans une
+    poubelle du quai 3. Entre 17h00 et 17h40, dix personnes travaillaient ou attendaient
+    autour du hall central et du couloir des consignes."
+  facts: "Ticket de consigne n\xB0318 \xE9dit\xE9 \xE0 16h50\nCasier ouvert avec
+    le bon code, sans effraction\nLa cam\xE9ra du couloir des consignes ne filme
+    pas l'entr\xE9e du casier\nAnnonce au micro \xE0 17h25 (train de 17h42 retard\xE9
+    de 12 minutes)\nUn homme avec un sac \xE0 dos orange a \xE9t\xE9 vu dans le hall\nValise
+    retrouv\xE9e \xE0 18h05 dans une poubelle du quai 3"
+  suspects:
+  - {fileID: 11400000, guid: 9a2ce118c51cb184ab76e38f7e6a3ad4, type: 2}

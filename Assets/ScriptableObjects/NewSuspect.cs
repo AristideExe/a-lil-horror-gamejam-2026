@@ -11,7 +11,16 @@ public class SuspectData : ScriptableObject
 {
     // The fisrt one is the truth the other one are lie
 
-    public Sprite[] picture;
+    public Sprite picture;
+
+    [Header(">====== MODEL ======<")]
+    public int hair_id;
+    public int hair_color;
+    public int shirt_color;
+    public int pants_color;
+    public int scary_color;
+
+    public string c_ID; // case_ID
 
     [Header(">====== ID ======<")]
     public string s_ID;

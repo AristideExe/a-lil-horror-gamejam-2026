@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b385e23172be854997a36a9c90678ce, type: 3}
+  m_Name: case_6
+  m_EditorClassIdentifier: Assembly-CSharp::CaseData
+  id: 6
+  context: "LE VOL DE \xAB LA DAME AU CHAPEAU VERT \xBB\nUn vendredi soir d'octobre,
+    pendant le vernissage nocturne du mus\xE9e des Beaux-Arts de Villeneuve, le tableau
+    \xAB La Dame au chapeau vert \xBB (huile sur toile de 1887, estim\xE9e \xE0 2,4
+    millions d'euros) dispara\xEEt de la salle 4 entre 21h15 et 21h40. Le cadre vide
+    est retrouv\xE9 dans le local de nettoyage du couloir ouest. Environ 120 invit\xE9s
+    \xE9taient pr\xE9sents. Le voleur connaissait le code d'alarme du personnel et
+    le plan des salles."
+  facts: "Alarme de la salle 4 d\xE9sactiv\xE9e avec un code du personnel \xE0 21h14\nCoupure
+    de courant de 90 secondes \xE0 21h32\nVitrine ouverte avec une cl\xE9, sans bris
+    de verre\nCadre vide retrouv\xE9 dans le local de nettoyage, couloir ouest\nUne
+    serveuse a vu un homme en manteau long gris prendre l'escalier de service\nUn
+    manteau a \xE9t\xE9 r\xE9cup\xE9r\xE9 au vestiaire sans ticket \xE0 21h40"
+  suspects:
+  - {fileID: 11400000, guid: bccb1bba8c7ea0641b0cd23b3ae0ae49, type: 2}

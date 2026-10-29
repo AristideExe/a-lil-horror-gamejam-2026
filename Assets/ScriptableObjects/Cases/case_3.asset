@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b385e23172be854997a36a9c90678ce, type: 3}
+  m_Name: case_3
+  m_EditorClassIdentifier: Assembly-CSharp::CaseData
+  id: 3
+  context: "LE VOL DES SUJETS D'EXAMEN, \xC9COLE JEAN-JAUR\xC8S\nUn jeudi de novembre,
+    les sujets du contr\xF4le final de math\xE9matiques des classes de troisi\xE8me
+    ont disparu du coffre du secr\xE9tariat entre 17h30 et 19h30. Le coffre a \xE9t\xE9
+    ouvert avec la cl\xE9, sans effraction. Quelqu'un a ensuite photocopi\xE9 les
+    sujets, qui circulent d\xE9j\xE0 sur un groupe de messagerie d'\xE9l\xE8ves.
+    La directrice, Mme Lacombe, exige le coupable avant l'\xE9preuve du lendemain
+    \xE0 8h. Dix adultes de l'\xE9tablissement \xE9taient encore pr\xE9sents apr\xE8s
+    la fin des cours."
+  facts: "Fin des cours : 17h30\nSecr\xE9tariat ferm\xE9 \xE0 cl\xE9 \xE0 17h45\nBadge
+    n\xB012 (personnel) utilis\xE9 sur la porte du couloir B \xE0 18h42\nLa photocopieuse
+    du couloir a imprim\xE9 24 pages \xE0 18h50\nUne tache de caf\xE9 sur la premi\xE8re
+    page photocopi\xE9e\nUn \xE9l\xE8ve a vu une silhouette en gilet bleu dans la
+    cour\nLa fen\xEAtre du couloir B est rest\xE9e entrouverte"
+  suspects:
+  - {fileID: 11400000, guid: f80f0fc8e90117b47acb1f56933c2a4f, type: 2}
