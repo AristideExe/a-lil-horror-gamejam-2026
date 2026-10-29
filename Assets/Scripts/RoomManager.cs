@@ -61,6 +61,7 @@ public class RoomManager : MonoBehaviour
     public SuspectData[] GetSuspects(List<SuspectData> suspects)
     {
         if (_currentSuspects.Length > 0) return _currentSuspects;
+        Debug.Log("ICI");
         // Only get a number of suspect depend on the difficulty
          nbSuspect = suspects.Count;
         if (_level == Level.Easy) nbSuspect = 3;

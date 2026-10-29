@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -34,12 +35,14 @@ public class SuspectsManager : MonoBehaviour
         _suspects = _currentCases.suspects;
     }
     
-    void Start()
+    IEnumerator Start()
     {
         RoomManager.Instance._currentCase = _currentCases;
         RoomManager.Instance._suspects = _suspects.ToList();
 
-        _suspects = RoomManager.Instance.GetSuspects(_suspects.ToList());
+        while (RoomManager.Instance._currentSuspects.Length <= 0)
+            yield return null;
+        _suspects = RoomManager.Instance._currentSuspects;
 
         _suspectsNb = _suspects.Length;
         InitSuspects();

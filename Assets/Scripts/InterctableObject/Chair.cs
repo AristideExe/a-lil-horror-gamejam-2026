@@ -14,6 +14,7 @@ public class Chair : MonoBehaviour, IInteractable
     {
         if (interactor.TryGetComponent(out PlayerMovement playerMovement) && interactor.TryGetComponent(out PlayerInteract playerInteract))
         {
+            if (!ClickOnObject.Instance.enabled && _playerSat) return;
             if (_playerSat)
             {
                 playerInteract.RemoveFocusedInteractable();
@@ -31,9 +32,11 @@ public class Chair : MonoBehaviour, IInteractable
                 MouseLook.Instance.EnableLook();
                 _playerSat = false;
                 Camera.main.transform.localPosition = new Vector3(0, 1.69f, .218f); 
+                ClickOnObject.Instance.enabled = false;
             }
             else
             {
+                ClickOnObject.Instance.enabled = true;
                 playerMovement.DisableMovement();
                 MouseLook.Instance.DisableLook();
                 playerInteract.SetFocusedInteractable(this);               
