@@ -1,5 +1,5 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClickOnObject : MonoBehaviour
 {
@@ -47,13 +47,20 @@ public class ClickOnObject : MonoBehaviour
         transform.position = _oldPos;
         transform.rotation = _oldRot;
         transform.parent = _oldParent;
+
+        // Disable all buttons
+        Button[] allButtons = GetComponentsInChildren<Button>();
+        foreach (Button b in allButtons)
+            b.enabled = false;
     }
 
     void Update()
     {
         Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(_cam.transform.position, Input.mousePosition - _cam.transform.position, Color.red);
         if (Physics.Raycast(ray, out RaycastHit hit, _dist))
         {
+            // Debug.Log(hit.transform.name);
             if (hit.transform != transform) return;
 
             if (Input.GetMouseButtonDown(0))
@@ -62,6 +69,11 @@ public class ClickOnObject : MonoBehaviour
 
                 // Set the layer of the object and its children to the overlay layer
                 SetLayer(gameObject, _overlayLayerMask);
+                
+                // Enable all buttons
+                Button[] allButtons = GetComponentsInChildren<Button>();
+                foreach (Button b in allButtons)
+                    b.enabled = true;
 
                 transform.localPosition = Vector3.zero;
                 if (TryGetComponent(out RotationScript rs))

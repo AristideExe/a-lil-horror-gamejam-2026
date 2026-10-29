@@ -95,6 +95,7 @@ public class RotationScript : MonoBehaviour
                 if (TryGetComponent(out ClickOnObject coo))
                 {
                     coo.enabled = true;
+                    Debug.Log($"hit {hit.transform.name}");
                     coo.Reset();
                 }
                 this.enabled = false;
