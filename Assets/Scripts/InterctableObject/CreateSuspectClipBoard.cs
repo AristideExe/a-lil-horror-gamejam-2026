@@ -10,6 +10,7 @@ public class CreateSuspectClipBoard : MonoBehaviour
 
     [Header(">====== UI ELEMENTS ======<")]
     [SerializeField] Image _picture;
+    [SerializeField] TextMeshProUGUI _id;
     [SerializeField] TextMeshProUGUI _name;
     [SerializeField] TextMeshProUGUI _firstName;
     [SerializeField] TextMeshProUGUI _pseudo;
@@ -19,6 +20,7 @@ public class CreateSuspectClipBoard : MonoBehaviour
     [SerializeField] TextMeshProUGUI _height;
     [SerializeField] TextMeshProUGUI _weight;
     [SerializeField] TextMeshProUGUI _alibi;
+    [SerializeField] TextMeshProUGUI _status;
     void Start()
     {
         if (SuspectsManager.Instance._suspects.Length == 0) return;
@@ -36,5 +38,37 @@ public class CreateSuspectClipBoard : MonoBehaviour
         _height.text = _suspect.s_height[0];
         _weight.text = _suspect.s_weight[0];
         _alibi.text = _suspect.s_alibi[0];
+        _id.text = _suspect.s_ID.ToString();
+    }
+
+    void Update()
+    {
+        string status = "Calm";
+        Color color = Color.green;
+        switch (_suspect.status)
+        {
+            case 0:
+                status = "Calm";
+                color = Color.green;
+                break;
+            case 1:
+                status = "Agitated";
+                color = Color.yellow;
+                break;
+            case 2:
+                status = "Disturbed";
+                color = Color.orange;
+                break;
+            case 3:
+                status = "Hostile";
+                color = Color.red;
+                break;
+            default:
+                status = "Calm";
+                color = Color.green;
+                break;
+        }
+        _status.text = status;
+        _status.color = color;
     }
 }

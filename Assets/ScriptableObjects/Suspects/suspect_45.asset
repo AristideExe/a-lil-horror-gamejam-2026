@@ -1,6 +1,81 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!213 &-7334314173218104526
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
+  m_Name: suspect_45
+  m_EditorClassIdentifier: Assembly-CSharp::SuspectData
+  sad: 0
+  angry: 0
+  happy: 0
+  surprise: 0
+  picture: {fileID: 3198237342988274925}
+  hair_id: 2
+  hair_color: 2
+  shirt_color: 3
+  pants_color: 0
+  scary_color: 0
+  c_ID: 5
+  s_ID: 45
+  s_name:
+  - Delacroix
+  - Gomez
+  - Nicolas
+  - Berger
+  s_firstName:
+  - Denis
+  - "Beno\xEEt"
+  - Arthur
+  s_pseudo:
+  - ColibriRapide
+  - Cobra13
+  - Mouette77
+  - Mimi99
+  s_age:
+  - 43
+  - 56
+  - 60
+  - 50
+  s_sex:
+  - H
+  s_work:
+  - "Notaire, neveu de la d\xE9funte"
+  - "Avocat, neveu de la d\xE9funte"
+  - "Clerc de notaire, neveu de la d\xE9funte"
+  s_height:
+  - 1.92
+  - 1.75
+  - 1.87
+  s_weight:
+  - 99
+  - 76
+  - 80
+  s_alibi:
+  - "J'ai pass\xE9 la soir\xE9e \xE0 mon cabinet \xE0 relire trois dossiers. J'ai
+    re\xE7u un appel de ma cousine \xE0 21h15. Je suis rentr\xE9 en voiture, une
+    Audi noire, en passant par l'avenue Foch."
+  - "J'ai pass\xE9 la soir\xE9e \xE0 mon cabinet \xE0 relire dix dossiers. J'ai re\xE7u
+    un appel de ma cousine \xE0 21h15. Je suis rentr\xE9 en voiture, une Audi noire,
+    en passant par l'avenue Foch."
+  - "J'ai pass\xE9 la soir\xE9e \xE0 mon cabinet \xE0 relire trois dossiers. J'ai
+    re\xE7u un appel de mon avocat \xE0 21h15. Je suis rentr\xE9 en voiture, une
+    Audi noire, en passant par l'avenue Foch."
+  - "J'ai pass\xE9 la soir\xE9e \xE0 mon cabinet \xE0 relire trois dossiers. J'ai
+    re\xE7u un appel de ma cousine \xE0 22h45. Je suis rentr\xE9 en voiture, une
+    Audi noire, en passant par l'avenue Foch."
+  - "J'ai pass\xE9 la soir\xE9e \xE0 mon cabinet \xE0 relire trois dossiers. J'ai
+    re\xE7u un appel de ma cousine \xE0 21h15. Je suis rentr\xE9 en voiture, une
+    Audi noire, en passant par la rue du Moulin."
+  s_choice: 0
+  s_level: 0
+--- !u!213 &3198237342988274925
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26,7 +101,7 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: -2857478892295403586}
+    texture: {fileID: 9128481690792082035}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -117,7 +192,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: -2857478892295403586}
+    texture: {fileID: 9128481690792082035}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -210,7 +285,7 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
---- !u!28 &-2857478892295403586
+--- !u!28 &9128481690792082035
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,74 +331,3 @@ Texture2D:
     offset: 0
     size: 0
     path: 
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
-  m_Name: suspect_45
-  m_EditorClassIdentifier: Assembly-CSharp::SuspectData
-  picture: {fileID: -7334314173218104526}
-  hair_id: 2
-  hair_color: 2
-  shirt_color: 3
-  pants_color: 0
-  scary_color: 0
-  c_ID: 5
-  s_ID: 45
-  s_name:
-  - Delacroix
-  - Gomez
-  - Nicolas
-  - Berger
-  s_firstName:
-  - Denis
-  - "Beno\xEEt"
-  - Arthur
-  s_pseudo:
-  - ColibriRapide
-  - Cobra13
-  - Mouette77
-  - Mimi99
-  s_age:
-  - 43
-  - 56
-  - 60
-  - 50
-  s_sex:
-  - H
-  s_work:
-  - "Notaire, neveu de la d\xE9funte"
-  - "Avocat, neveu de la d\xE9funte"
-  - "Clerc de notaire, neveu de la d\xE9funte"
-  s_height:
-  - 1.92
-  - 1.75
-  - 1.87
-  s_weight:
-  - 99
-  - 76
-  - 80
-  s_alibi:
-  - "J'ai pass\xE9 la soir\xE9e \xE0 mon cabinet \xE0 relire trois dossiers. J'ai
-    re\xE7u un appel de ma cousine \xE0 21h15. Je suis rentr\xE9 en voiture, une
-    Audi noire, en passant par l'avenue Foch."
-  - "J'ai pass\xE9 la soir\xE9e \xE0 mon cabinet \xE0 relire dix dossiers. J'ai re\xE7u
-    un appel de ma cousine \xE0 21h15. Je suis rentr\xE9 en voiture, une Audi noire,
-    en passant par l'avenue Foch."
-  - "J'ai pass\xE9 la soir\xE9e \xE0 mon cabinet \xE0 relire trois dossiers. J'ai
-    re\xE7u un appel de mon avocat \xE0 21h15. Je suis rentr\xE9 en voiture, une
-    Audi noire, en passant par l'avenue Foch."
-  - "J'ai pass\xE9 la soir\xE9e \xE0 mon cabinet \xE0 relire trois dossiers. J'ai
-    re\xE7u un appel de ma cousine \xE0 22h45. Je suis rentr\xE9 en voiture, une
-    Audi noire, en passant par l'avenue Foch."
-  - "J'ai pass\xE9 la soir\xE9e \xE0 mon cabinet \xE0 relire trois dossiers. J'ai
-    re\xE7u un appel de ma cousine \xE0 21h15. Je suis rentr\xE9 en voiture, une
-    Audi noire, en passant par la rue du Moulin."
-  s_choice: 0
-  s_level: 0

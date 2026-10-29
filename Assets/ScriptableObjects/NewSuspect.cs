@@ -15,6 +15,7 @@ public class SuspectData : ScriptableObject
     public float angry;
     public float happy;
     public float surprise;
+    public int status = 0; // Calm / Disturbed / Hostile
 
 
     public Sprite picture;

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,6 +10,7 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] private float waitBeforeClose = 2f;
     [SerializeField] private AudioClip openDoorSound;
     [SerializeField] private AudioClip closeDoorSound;
+    [SerializeField] private AudioClip _screamerSound;
     
     private bool _isOpen;
     private Quaternion _closedRotation;
@@ -37,8 +37,24 @@ public class Door : MonoBehaviour, IInteractable
         _coroutine = StartCoroutine(ToggleDoor(true));
     }
 
+    void Screamer()
+    {
+        if (RoomManager.Instance._startScreamer)
+        {
+            if ((int)Random.Range(0, (RoomManager.Instance._timeMax - RoomManager.Instance._time)/30f) < 1);
+            {
+                // generate Screamer
+                GameObject screamer = Instantiate(RoomManager.Instance._screamers[Random.Range(0, RoomManager.Instance._screamers.Length)]);
+                screamer.transform.position = transform.position;
+                _audioSource.PlayOneShot(_screamerSound);
+            }
+        }
+    }
+
     private IEnumerator ToggleDoor(bool manual)
     {
+        Screamer();
+
         Quaternion targetRotation = _isOpen ? _closedRotation : _openRotation;
         float speed =  manual ? manualOpenSpeed : automaticCloseSpeed;
         _audioSource.PlayOneShot(_isOpen ? closeDoorSound : openDoorSound);

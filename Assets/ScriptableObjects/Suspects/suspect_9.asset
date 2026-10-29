@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
   m_Name: suspect_9
   m_EditorClassIdentifier: Assembly-CSharp::SuspectData
-  picture: {fileID: 2092200706092551140}
+  sad: 0
+  angry: 0
+  happy: 0
+  surprise: 0
+  picture: {fileID: 1190746040713721606}
   hair_id: 3
   hair_color: 2
   shirt_color: 0
@@ -71,7 +75,7 @@ MonoBehaviour:
     entendu le portail du quai claquer, mais j'ai continu\xE9 avec mon chariot orange."
   s_choice: 0
   s_level: 0
---- !u!213 &2092200706092551140
+--- !u!213 &1190746040713721606
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +101,7 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 5437274618110555845}
+    texture: {fileID: 4538143777583594481}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -188,7 +192,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: 5437274618110555845}
+    texture: {fileID: 4538143777583594481}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -281,7 +285,7 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
---- !u!28 &5437274618110555845
+--- !u!28 &4538143777583594481
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

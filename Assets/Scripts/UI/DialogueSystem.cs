@@ -26,6 +26,8 @@ public class DialogueSystem : MonoBehaviour
     public void ShowDialogue(string name, string text, SuspectData suspect)
     {
         // this function allow us to show a diaologue in game
+        if (suspect.status == 3) return;
+
         _dialogueBox.SetActive(true);
         _name.text = name;
         _text.text = text;
@@ -77,9 +79,7 @@ public class DialogueSystem : MonoBehaviour
             // Animate the mouth
             float angle = i * (2f * Mathf.PI / 5);
             float mouthOpen = Mathf.Abs(Mathf.Sin(angle));
-            Debug.Log((int)(mouthOpen*100));
-            head.SetBlendShapeWeight(11, (int)(mouthOpen*100));
-            
+            head.SetBlendShapeWeight(11, (int)(mouthOpen*100));            
         }
 
         yield return null; 

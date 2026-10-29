@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-6700573449437247349
+--- !u!28 &-8652366446646145226
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,83 +46,7 @@ Texture2D:
     offset: 0
     size: 0
     path: 
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
-  m_Name: suspect_1
-  m_EditorClassIdentifier: Assembly-CSharp::SuspectData
-  picture: {fileID: 2365371372403498486}
-  hair_id: 3
-  hair_color: 1
-  shirt_color: 5
-  pants_color: 0
-  scary_color: 1
-  c_ID: 1
-  s_ID: 1
-  s_name:
-  - Hugo
-  - "L\xE9o"
-  - Arthur
-  - Lucas
-  s_firstName:
-  - Marchand
-  - Moreau
-  - Charpantier
-  s_pseudo:
-  - "N\xE9n\xE9"
-  - ColibriGris
-  - CrabeSage
-  - CrabeRouge
-  s_age:
-  - 19
-  - 21
-  - 45
-  - 32
-  s_sex:
-  - H
-  s_work:
-  - Chef de rayon boucherie
-  - Boucher
-  - Charcutier
-  s_height:
-  - 1.69
-  - 1.82
-  - 1.10
-  s_weight:
-  - 102
-  - 85
-  - 95
-  s_alibi:
-  - "Apr\xE8s la fermeture, je suis rest\xE9 en boucherie jusqu'\xE0 21h00 pour nettoyer
-    la trancheuse. J'ai ensuite bu un caf\xE9 avec Nadia en salle de pause. Je suis
-    sorti par l'entr\xE9e principale, en blouson gris, et j'ai pris ma Clio blanche
-    gar\xE9e sur le parking c\xF4t\xE9 nord."
-  - "Apr\xE8s la fermeture, je suis rest\xE9 en boucherie jusqu'\xE0 21h20 pour nettoyer
-    la trancheuse. J'ai ensuite bu un caf\xE9 avec Nadia en salle de pause. Je suis
-    sorti par l'entr\xE9e principale, en blouson gris, et j'ai pris ma Clio blanche
-    gar\xE9e sur le parking c\xF4t\xE9 nord."
-  - "Apr\xE8s la fermeture, je suis rest\xE9 en boucherie jusqu'\xE0 21h00 pour nettoyer
-    la trancheuse. J'ai ensuite bu un caf\xE9 avec Karim en salle de pause. Je suis
-    sorti par l'entr\xE9e principale, en blouson gris, et j'ai pris ma Clio blanche
-    gar\xE9e sur le parking c\xF4t\xE9 nord."
-  - "Apr\xE8s la fermeture, je suis rest\xE9 en boucherie jusqu'\xE0 21h00 pour nettoyer
-    la trancheuse. J'ai ensuite bu un caf\xE9 avec Nadia en salle de pause. Je suis
-    sorti par l'entr\xE9e principale, en blouson gris, et j'ai pris ma Clio rouge
-    gar\xE9e sur le parking c\xF4t\xE9 nord."
-  - "Apr\xE8s la fermeture, je suis rest\xE9 en boucherie jusqu'\xE0 21h00 pour nettoyer
-    la trancheuse. J'ai ensuite bu un caf\xE9 avec Nadia en salle de pause. Je suis
-    sorti par l'entr\xE9e principale, en blouson gris, et j'ai pris ma Clio blanche
-    gar\xE9e sur le parking c\xF4t\xE9 sud."
-  s_choice: 0
-  s_level: 0
---- !u!213 &2365371372403498486
+--- !u!213 &-3314420165751531337
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,7 +72,7 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: -6700573449437247349}
+    texture: {fileID: -8652366446646145226}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -239,7 +163,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: -6700573449437247349}
+    texture: {fileID: -8652366446646145226}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -332,3 +256,83 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
+  m_Name: suspect_1
+  m_EditorClassIdentifier: Assembly-CSharp::SuspectData
+  sad: 0
+  angry: 0
+  happy: 0
+  surprise: 0
+  picture: {fileID: -3314420165751531337}
+  hair_id: 3
+  hair_color: 1
+  shirt_color: 5
+  pants_color: 0
+  scary_color: 1
+  c_ID: 1
+  s_ID: 1
+  s_name:
+  - Hugo
+  - "L\xE9o"
+  - Arthur
+  - Lucas
+  s_firstName:
+  - Marchand
+  - Moreau
+  - Charpantier
+  s_pseudo:
+  - "N\xE9n\xE9"
+  - ColibriGris
+  - CrabeSage
+  - CrabeRouge
+  s_age:
+  - 19
+  - 21
+  - 45
+  - 32
+  s_sex:
+  - H
+  s_work:
+  - Chef de rayon boucherie
+  - Boucher
+  - Charcutier
+  s_height:
+  - 1.69
+  - 1.82
+  - 1.10
+  s_weight:
+  - 102
+  - 85
+  - 95
+  s_alibi:
+  - "Apr\xE8s la fermeture, je suis rest\xE9 en boucherie jusqu'\xE0 21h00 pour nettoyer
+    la trancheuse. J'ai ensuite bu un caf\xE9 avec Nadia en salle de pause. Je suis
+    sorti par l'entr\xE9e principale, en blouson gris, et j'ai pris ma Clio blanche
+    gar\xE9e sur le parking c\xF4t\xE9 nord."
+  - "Apr\xE8s la fermeture, je suis rest\xE9 en boucherie jusqu'\xE0 21h20 pour nettoyer
+    la trancheuse. J'ai ensuite bu un caf\xE9 avec Nadia en salle de pause. Je suis
+    sorti par l'entr\xE9e principale, en blouson gris, et j'ai pris ma Clio blanche
+    gar\xE9e sur le parking c\xF4t\xE9 nord."
+  - "Apr\xE8s la fermeture, je suis rest\xE9 en boucherie jusqu'\xE0 21h00 pour nettoyer
+    la trancheuse. J'ai ensuite bu un caf\xE9 avec Karim en salle de pause. Je suis
+    sorti par l'entr\xE9e principale, en blouson gris, et j'ai pris ma Clio blanche
+    gar\xE9e sur le parking c\xF4t\xE9 nord."
+  - "Apr\xE8s la fermeture, je suis rest\xE9 en boucherie jusqu'\xE0 21h00 pour nettoyer
+    la trancheuse. J'ai ensuite bu un caf\xE9 avec Nadia en salle de pause. Je suis
+    sorti par l'entr\xE9e principale, en blouson gris, et j'ai pris ma Clio rouge
+    gar\xE9e sur le parking c\xF4t\xE9 nord."
+  - "Apr\xE8s la fermeture, je suis rest\xE9 en boucherie jusqu'\xE0 21h00 pour nettoyer
+    la trancheuse. J'ai ensuite bu un caf\xE9 avec Nadia en salle de pause. Je suis
+    sorti par l'entr\xE9e principale, en blouson gris, et j'ai pris ma Clio blanche
+    gar\xE9e sur le parking c\xF4t\xE9 sud."
+  s_choice: 0
+  s_level: 0

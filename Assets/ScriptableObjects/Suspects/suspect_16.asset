@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
   m_Name: suspect_16
   m_EditorClassIdentifier: Assembly-CSharp::SuspectData
-  picture: {fileID: 4708429889466604745}
+  sad: 0
+  angry: 0
+  happy: 0
+  surprise: 0
+  picture: {fileID: 2935038311441495684}
   hair_id: 4
   hair_color: 2
   shirt_color: 4
@@ -71,7 +75,7 @@ MonoBehaviour:
     caf\xE9. \xC0 22h05, mon ami n'est pas venu, alors j'ai command\xE9 un taxi."
   s_choice: 0
   s_level: 0
---- !u!213 &4708429889466604745
+--- !u!213 &2935038311441495684
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +101,7 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 8569543815564977785}
+    texture: {fileID: 6019437381034001706}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -188,7 +192,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: 8569543815564977785}
+    texture: {fileID: 6019437381034001706}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -281,7 +285,7 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
---- !u!28 &8569543815564977785
+--- !u!28 &6019437381034001706
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -560,6 +560,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935586599891236010, guid: 5aad619f0b3b77e49afb8efda2565674, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6900005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935586599891236010, guid: 5aad619f0b3b77e49afb8efda2565674, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000004371139
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935586599891236010, guid: 5aad619f0b3b77e49afb8efda2565674, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935586599891236010, guid: 5aad619f0b3b77e49afb8efda2565674, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 9122226597465782028, guid: 5aad619f0b3b77e49afb8efda2565674, type: 3}
       propertyPath: m_Name
       value: '[PICTURE ROOM]'
@@ -728,6 +744,11 @@ MonoBehaviour:
   _currentCase: {fileID: 0}
   _suspects: []
   _currentSuspects: []
+  _timeMax: 600
+  _time: 0
+  _gameRun: 1
+  _startScreamer: 0
+  _screamers: []
   _roomPrefab: {fileID: 4175487416181258687, guid: cd8ac11036156634b992251985a3c95c, type: 3}
   _wallBegin: {fileID: 1911231247}
   _wallEnd: {fileID: 467788708}

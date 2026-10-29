@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
   m_Name: suspect_17
   m_EditorClassIdentifier: Assembly-CSharp::SuspectData
-  picture: {fileID: 775340660128864467}
+  sad: 0
+  angry: 0
+  happy: 0
+  surprise: 0
+  picture: {fileID: 1016623405601940855}
   hair_id: 4
   hair_color: 1
   shirt_color: 1
@@ -71,7 +75,7 @@ MonoBehaviour:
     j'ai bu un th\xE9 avec Val\xE9rie avant de rentrer."
   s_choice: 0
   s_level: 0
---- !u!213 &775340660128864467
+--- !u!213 &1016623405601940855
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +101,7 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 5467667037012517160}
+    texture: {fileID: 7696156370744742892}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -188,7 +192,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: 5467667037012517160}
+    texture: {fileID: 7696156370744742892}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -281,7 +285,7 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
---- !u!28 &5467667037012517160
+--- !u!28 &7696156370744742892
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

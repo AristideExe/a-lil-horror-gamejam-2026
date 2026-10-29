@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-1705159838064371702
+--- !u!28 &-3627640692380675482
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +58,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
   m_Name: suspect_3
   m_EditorClassIdentifier: Assembly-CSharp::SuspectData
-  picture: {fileID: 250403472669169314}
+  sad: 0
+  angry: 0
+  happy: 0
+  surprise: 0
+  picture: {fileID: 8131841928492077417}
   hair_id: 4
   hair_color: 2
   shirt_color: 3
@@ -122,7 +126,7 @@ MonoBehaviour:
     documents bleu."
   s_choice: 0
   s_level: 0
---- !u!213 &250403472669169314
+--- !u!213 &8131841928492077417
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,7 +152,7 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: -1705159838064371702}
+    texture: {fileID: -3627640692380675482}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -239,7 +243,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: -1705159838064371702}
+    texture: {fileID: -3627640692380675482}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
