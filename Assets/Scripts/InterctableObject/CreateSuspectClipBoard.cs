@@ -22,12 +22,13 @@ public class CreateSuspectClipBoard : MonoBehaviour
     void Start()
     {
         if (SuspectsManager.Instance._suspects.Length == 0) return;
+        if (SuspectsManager.Instance._suspects == null) return;
         _suspect = SuspectsManager.Instance._suspects[_index];
 
         _picture.sprite = _suspect.picture;
 
         _name.text = _suspect.s_name[0];
-        _firstName.text = _suspect.s_name[0];
+        _firstName.text = _suspect.s_firstName[0];
         _pseudo.text = _suspect.s_pseudo[0];
         _work.text = _suspect.s_work[0];
         _age.text = _suspect.s_age[0];

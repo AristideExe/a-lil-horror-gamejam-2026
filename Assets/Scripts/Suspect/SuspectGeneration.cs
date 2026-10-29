@@ -47,7 +47,7 @@ public class SuspectGeneration : MonoBehaviour
 
     public GameObject[] GenerateSuspect(string gender, int hair_id, int hair_color, int shirt_color, int pants_color, int scary_color)
     {
-        Debug.Log($"Generate Suspect : {gender}, {hair_id}, {hair_color}, {shirt_color}, {pants_color}, {scary_color}");
+        // Debug.Log($"Generate Suspect : {gender}, {hair_id}, {hair_color}, {shirt_color}, {pants_color}, {scary_color}");
         // Create new blank suspect
         GameObject _currentInstance = Instantiate(_characterPrefab);
         
@@ -59,9 +59,13 @@ public class SuspectGeneration : MonoBehaviour
                 _pants = rend;
             if (rend.name.ToLower().Contains("shirt"))
                 _shirt = rend;
+            if (rend.name.ToLower().Contains($"hair"))
+                rend.gameObject.SetActive(false);
             if (rend.name.ToLower().Contains($"hair.{gender.ToLower()}.{hair_id}"))
+            {
                 _hair = rend;
-                    
+                rend.gameObject.SetActive(true);
+            }
         }
 
         // Generate colors
@@ -82,7 +86,7 @@ public class SuspectGeneration : MonoBehaviour
 
         // Create the scary version with red skin
         GameObject _scaryInstance = Instantiate(_currentInstance);
-        allRenderers = _currentInstance.GetComponentsInChildren<SkinnedMeshRenderer>();
+        allRenderers = _scaryInstance.GetComponentsInChildren<SkinnedMeshRenderer>();
         Material scarySkin = _scarySkin[scary_color];
         foreach (var rend in allRenderers)
         {
@@ -94,13 +98,13 @@ public class SuspectGeneration : MonoBehaviour
 
         GameObject[] models = new GameObject[2]
         {
-            _scaryInstance, _currentInstance
+            _currentInstance, _scaryInstance
         };
 
         return models;
     }
 
-    public Sprite CreatePicture(GameObject target, Vector3 camPosition)
+    public Sprite CreatePicture(Vector3 camPosition)
     {
         if (_cam == null)
         {
@@ -108,7 +112,7 @@ public class SuspectGeneration : MonoBehaviour
             return null;
         }
         
-        _cam.transform.Rotate(0, 180, 0);
+        _cam.transform.rotation = Quaternion.Euler(0, 180, 0);
         _cam.transform.position = camPosition;
         //_cam.transform.LookAt(target.transform.position);
 
@@ -145,10 +149,7 @@ public class SuspectGeneration : MonoBehaviour
         // Create the suspect at the pictureRoom
         models[0].transform.position = new Vector3(0, 20, 0);
 
-        Sprite picture = CreatePicture(models[0], new Vector3(0, 20 + 1.69f, .5f));
-
-        Destroy(models[0].gameObject);
-        Destroy(models[1].gameObject);
+        Sprite picture = CreatePicture(new Vector3(0, 20 + 1.69f, .5f));
 
         return new ID(picture, models);
     }

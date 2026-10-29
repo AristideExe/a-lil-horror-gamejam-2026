@@ -61,6 +61,8 @@ namespace CSVGeneration
 
             for (int i = 0; i < csvData.Count; i++)
             {
+                // if (i > 8) break;
+
                 Dictionary<string, object> item = csvData[i];
 
                 if (_casesGeneration)
@@ -129,12 +131,15 @@ namespace CSVGeneration
                     ID suspectID = SuspectGeneration.Instance.CreateID(s_sex[0], hair_id, hair_color, shirt_color, pants_color, scary_color);
 
                     picture = suspectID.picture;
+
                     models = suspectID.models;
+                    UnityEngine.Object.DestroyImmediate(models[0].gameObject);
+                    UnityEngine.Object.DestroyImmediate(models[1].gameObject);
 
                     CreateScriptableObjectSuspect(
                         hair_id, hair_color, shirt_color, pants_color, scary_color,
                         s_ID,
-                        picture, models,
+                        picture,
                         s_ID, s_name, s_firstName, s_pseudo,
                         s_age, s_sex, s_work, s_height,
                         s_weight, s_alibi
@@ -147,7 +152,7 @@ namespace CSVGeneration
         private static void CreateScriptableObjectSuspect(
             int hair_id, int hair_color, int shirt_color, int pants_color, int scary_color,
             string c_ID,
-            Sprite picture, GameObject[] models, 
+            Sprite picture,
             string s_ID, string[] s_name, string[] s_firstName, string[] s_pseudo,
             string[] s_age, string[] s_sex, string[] s_work, string[] s_height,
             string[] s_weight, string[] s_alibi)
@@ -176,26 +181,14 @@ namespace CSVGeneration
             string assetPath = $"Assets/ScriptableObjects/Suspects/suspect_{s_ID}.asset";
             AssetDatabase.CreateAsset(suspect, assetPath);
 
-            // if sprite exists
-            if (picture != null)
-            {
-                picture.texture.name = $"Tex_Portrait_{s_ID}";
-                picture.name = $"Sprite_Portrait_{s_ID}";
+            picture.texture.name = $"texture_{s_ID}";
+            picture.name = $"sprite_{s_ID}";
                 
-                AssetDatabase.AddObjectToAsset(picture.texture, suspect);
-                AssetDatabase.AddObjectToAsset(picture, suspect);
+            AssetDatabase.AddObjectToAsset(picture.texture, suspect);
+            AssetDatabase.AddObjectToAsset(picture, suspect);
                 
-                suspect.picture = picture;
-            }
+            suspect.picture = picture;
 
-            // Cleaning
-            if (models != null)
-            {
-                foreach (var m in models)
-                {
-                    if (m != null) UnityEngine.Object.DestroyImmediate(m);
-                }
-            }
 
             EditorUtility.SetDirty(suspect);
             AssetDatabase.SaveAssets();
