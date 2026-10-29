@@ -27,4 +27,13 @@ MonoBehaviour:
     page photocopi\xE9e\nUn \xE9l\xE8ve a vu une silhouette en gilet bleu dans la
     cour\nLa fen\xEAtre du couloir B est rest\xE9e entrouverte"
   suspects:
-  - {fileID: 11400000, guid: f80f0fc8e90117b47acb1f56933c2a4f, type: 2}
+  - {fileID: 11400000, guid: 6599c02e921c81343b52ac30c010a452, type: 2}
+  - {fileID: 11400000, guid: 63016a5f7d35d184ebc4e2e3098c826e, type: 2}
+  - {fileID: 11400000, guid: 81b370d4872d43244aed055cb351f0af, type: 2}
+  - {fileID: 11400000, guid: f8dae9514e324f545820b961bfc68507, type: 2}
+  - {fileID: 11400000, guid: 5aab1adbf811c9f4d807d77b34110b1e, type: 2}
+  - {fileID: 11400000, guid: a73c0d329c4751f46852b3c95e52c4ab, type: 2}
+  - {fileID: 11400000, guid: 9e8390937145f524988b7363b39d4c03, type: 2}
+  - {fileID: 11400000, guid: b3070b5d6f662d64e8158363d074d3b8, type: 2}
+  - {fileID: 11400000, guid: 78c8b0d841e6baa4c92c1de8d08c3184, type: 2}
+  - {fileID: 11400000, guid: a891efc385bba7f41ba227ff225d4632, type: 2}

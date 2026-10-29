@@ -26,4 +26,13 @@ MonoBehaviour:
     de 5 kg, poign\xE9e essuy\xE9e\nPoudre blanche (magn\xE9sie) au sol, dans le
     couloir des vestiaires\nLa victime se souvient d'une odeur sucr\xE9e (parfum)"
   suspects:
-  - {fileID: 11400000, guid: 550a7c7fbfda35d408dda0d841521bef, type: 2}
+  - {fileID: 11400000, guid: 59392e3f25f18304d823022d1655d881, type: 2}
+  - {fileID: 11400000, guid: 6678ab66d9a7d52479e0668379eb8a86, type: 2}
+  - {fileID: 11400000, guid: b0705bf03ece6a94d872fb00ee3168d5, type: 2}
+  - {fileID: 11400000, guid: 817af9eb7be1f6941bd0b4cb3599188d, type: 2}
+  - {fileID: 11400000, guid: 6cdc09f17a40b1043a063cb04a5735e7, type: 2}
+  - {fileID: 11400000, guid: 6d7cf1f223aa5de45aac3acad46c3c27, type: 2}
+  - {fileID: 11400000, guid: 354960ab1a264e642b44021d3525598d, type: 2}
+  - {fileID: 11400000, guid: 8c2371a2858282242ba2226c6a6b6837, type: 2}
+  - {fileID: 11400000, guid: ed2db9eb02db9fe459aa9abdfec4c20e, type: 2}
+  - {fileID: 11400000, guid: 64f219ecad143bc45af58f6343237615, type: 2}

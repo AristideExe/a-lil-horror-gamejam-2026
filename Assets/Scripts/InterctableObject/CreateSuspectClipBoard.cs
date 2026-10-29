@@ -6,7 +6,7 @@ public class CreateSuspectClipBoard : MonoBehaviour
 {
     SuspectData _suspect;
     [Tooltip("-> Room Index")]
-    [SerializeField] int _index;
+    public int _index;
 
     [Header(">====== UI ELEMENTS ======<")]
     [SerializeField] Image _picture;

@@ -88,7 +88,7 @@ namespace CSVGeneration
                     {
                         string cheminAsset = AssetDatabase.GUIDToAssetPath(guids[j]);
                         allSuspects[j] = AssetDatabase.LoadAssetAtPath<SuspectData>(cheminAsset);
-                        Debug.Log(allSuspects[j]);
+                        // Debug.Log($"suspect {allSuspects[j]}, guids.Length: {guids.Length}, j: {j}");
                     }
 
                     List<SuspectData> suspectsList = new();
@@ -138,7 +138,7 @@ namespace CSVGeneration
 
                     CreateScriptableObjectSuspect(
                         hair_id, hair_color, shirt_color, pants_color, scary_color,
-                        s_ID,
+                        c_ID,
                         picture,
                         s_ID, s_name, s_firstName, s_pseudo,
                         s_age, s_sex, s_work, s_height,

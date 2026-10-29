@@ -25,4 +25,13 @@ MonoBehaviour:
     du critique\nLa cam\xE9ra de la salle n'enregistre pas le son\nUn serveur en
     tablier noir a \xE9t\xE9 vu pench\xE9 sur la table 7"
   suspects:
-  - {fileID: 11400000, guid: 4a7a9cc4642b34647a5da5d22b742128, type: 2}
+  - {fileID: 11400000, guid: 591e150cd1fe9984fa87dd8498ed1232, type: 2}
+  - {fileID: 11400000, guid: 1460670b33a9c074191e3089ff8136f9, type: 2}
+  - {fileID: 11400000, guid: b7ad5687223dfdd46ab2936d4b075dc5, type: 2}
+  - {fileID: 11400000, guid: 89881182d433a1a4dabb7b3178201f1c, type: 2}
+  - {fileID: 11400000, guid: 620ce12e5b9d3d64282b88eb3ff68aae, type: 2}
+  - {fileID: 11400000, guid: e02a52db0a073e140bd2017f0420a938, type: 2}
+  - {fileID: 11400000, guid: 187a0652102f52249a8c9b37e053d32e, type: 2}
+  - {fileID: 11400000, guid: 20a1c270334c50649afbc6d4ae7255cf, type: 2}
+  - {fileID: 11400000, guid: 79934f9e44657014ea1d760f3c282504, type: 2}
+  - {fileID: 11400000, guid: d3cf7a8e05bd5104c97c2e322ab4bc8c, type: 2}
