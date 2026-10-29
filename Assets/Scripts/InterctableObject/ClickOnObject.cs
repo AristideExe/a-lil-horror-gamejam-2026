@@ -1,8 +1,23 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+interface IButton
+{
+    public void SetIndex(int i);
+    public void Interact();
+    public IEnumerator ClickButton();
+}
+interface IObject
+{
+    public void Interact();
+}
+
 public class ClickOnObject : MonoBehaviour
 {
+    public static ClickOnObject Instance {private set; get;}
+
     public int _overlayLayerMask;
     [Header("Cameras")]
     public Camera _cam;
@@ -20,6 +35,9 @@ public class ClickOnObject : MonoBehaviour
     int _defaultLayerMask;
     void Awake()
     {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+
         _cam = Camera.main;
            
         _defaultLayerMask = gameObject.layer;
@@ -35,7 +53,7 @@ public class ClickOnObject : MonoBehaviour
         }
     }
 
-    public void Reset()
+    public void ResetObject(Transform transform)
     {
         SetLayer(gameObject, 0);
         // _blurBackground.SetActive(false);
@@ -53,36 +71,39 @@ public class ClickOnObject : MonoBehaviour
     void Update()
     {
         Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(_cam.transform.position, Input.mousePosition - _cam.transform.position, Color.red);
+        // Debug.DrawRay(_cam.transform.position, Input.mousePosition - _cam.transform.position, Color.red);
         if (Physics.Raycast(ray, out RaycastHit hit, _dist))
         {
-            // Debug.Log(hit.transform.name);
-            if (hit.transform != transform) return;
-
             if (Input.GetMouseButtonDown(0))
             {
-                // Remember everything
-                _oldParent = transform.parent;      
-                _oldPos = transform.position;   
-                _oldRot = transform.rotation;
+                if (hit.transform.TryGetComponent(out IButton button))
+                    button.Interact();
 
-                transform.parent = _zoomParent;
-
-                // Set the layer of the object and its children to the overlay layer
-                SetLayer(gameObject, _overlayLayerMask);
-                
-                // Enable all buttons
-                Button[] allButtons = GetComponentsInChildren<Button>();
-                foreach (Button b in allButtons)
-                    b.enabled = true;
-
-                transform.localPosition = Vector3.zero;
-                if (TryGetComponent(out RotationScript rs))
+                if (hit.transform.TryGetComponent(out IObject obj))
                 {
-                    rs._target = transform;
-                    rs.enabled = true;
+                    // Remember everything
+                    _oldParent = hit.transform.parent;      
+                    _oldPos = hit.transform.position;   
+                    _oldRot = hit.transform.rotation;
+
+                    hit.transform.parent = _zoomParent;
+
+                    // Set the layer of the object and its children to the overlay layer
+                    SetLayer(gameObject, _overlayLayerMask);
+                    
+                    // Enable all buttons
+                    Button[] allButtons = GetComponentsInChildren<Button>();
+                    foreach (Button b in allButtons)
+                        b.enabled = true;
+
+                    hit.transform.localPosition = Vector3.zero;
+                    if (hit.transform.TryGetComponent(out RotationScript rs))
+                    {
+                        rs._target = hit.transform;
+                        rs.enabled = true;
+                    }
+                    this.enabled = false;
                 }
-                this.enabled = false;
             }
         }
     }

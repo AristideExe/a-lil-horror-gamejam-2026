@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class RoomManager : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject _roomPrefab;
     [SerializeField] GameObject _wallBegin;
     [SerializeField] GameObject _wallEnd;
+    public List<Light[]> _lights = new List<Light[]>();
 
     [Header("====== DIFFICULTY ======")]
     [SerializeField] Level _level;
@@ -36,10 +38,7 @@ public class RoomManager : MonoBehaviour
 
     [Header("====== OBJECTS =====")]
     [SerializeField] GameObject _clipBoardPrefab;
-    [SerializeField] Camera _playerCam;
-    [SerializeField] Camera _overleyCam;
-    [SerializeField] GameObject _zoomParent;
-    [SerializeField] int _overlayLayerMask;
+    [SerializeField] GameObject _buttonsPrefab;
 
     [Header("====== SUSPECTS =====")]
     [HideInInspector] public Dictionary<SuspectData, GameObject> _allSuspects = new Dictionary<SuspectData, GameObject>();
@@ -50,6 +49,16 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject _roomParent;
 
     int nbSuspect = 0;
+
+    public void ChangeLight(int index, Color color, float intensity)
+    {
+        foreach (Light light in _lights[index])
+        {
+            light.color = color;
+            light.intensity = intensity;
+        }
+    }
+
     public SuspectData[] GetSuspects(List<SuspectData> suspects)
     {
         if (_currentSuspects.Length > 0) return _currentSuspects;
@@ -88,8 +97,6 @@ public class RoomManager : MonoBehaviour
         StartCoroutine(TimerC(_timeMax));
         _time += Time.deltaTime;
         _currentSuspects = GetSuspects(_suspects);
-
-        Debug.Log($"nbSustect: {nbSuspect}");
 
         for (int i = 0; i < nbSuspect; i++)
         {
@@ -131,12 +138,15 @@ public class RoomManager : MonoBehaviour
 
         // generating the rooms
         _wallBegin.transform.position = new Vector3(0, 0, -5);
-        _wallEnd.transform.position = new Vector3((nbSuspect-1)*10, 0, -5);
+        _wallEnd.transform.position = new Vector3((nbSuspect-1)*10.1f, 0, -5);
         for (int i = 0; i < nbSuspect; i++)
         {
             GameObject newRoom = Instantiate(_roomPrefab);
             newRoom.transform.position = new Vector3(i*10, 0, 0);
             newRoom.transform.parent = _roomParent.transform;
+
+            Light[] lights = newRoom.GetComponentsInChildren<Light>();
+            _lights.Add(lights);
         }
 
         // Genereting Objects
@@ -144,20 +154,27 @@ public class RoomManager : MonoBehaviour
         for (int i = 0; i < nbSuspect; i++)
         {
             GameObject clipBoard = Instantiate(_clipBoardPrefab);
-            clipBoard.transform.localPosition = new Vector3(i*10 - 1, 1.69f, 0);
+            clipBoard.transform.localPosition = new Vector3(i*10.1f - 1, 1.69f, 0);
             clipBoard.transform.localRotation = Quaternion.identity;
             clipBoard.transform.parent = _objectParent.transform;
             clipBoard.transform.localScale = 0.5f * Vector3.one;
 
             if (clipBoard.TryGetComponent(out CreateSuspectClipBoard cscb))
                 cscb._index = i;
+        }
 
-            ClickOnObject clickOnObject = clipBoard.GetComponentInChildren<ClickOnObject>();
-            clickOnObject._cam = _playerCam;
-            clickOnObject._overlayCam = _overleyCam;
-            clickOnObject._zoomParent = _zoomParent.transform;
-            clickOnObject._overlayCam.gameObject.layer = _overlayLayerMask;
-            clickOnObject._overlayLayerMask = _overlayLayerMask;
+        // -> buttons
+        for (int i = 0; i < nbSuspect; i++)
+        {
+            GameObject buttons = Instantiate(_buttonsPrefab);
+            buttons.transform.localPosition = new Vector3(i*10.1f, 1.69f, 0);
+            buttons.transform.localRotation = Quaternion.identity;
+            buttons.transform.parent = _objectParent.transform;
+
+            IButton[] buttonsScript = buttons.GetComponentsInChildren<IButton>();
+
+            foreach (IButton button in buttonsScript)
+                button.SetIndex(i);
         }
 
     }

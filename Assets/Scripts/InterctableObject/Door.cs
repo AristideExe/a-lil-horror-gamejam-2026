@@ -43,6 +43,7 @@ public class Door : MonoBehaviour, IInteractable
         {
             if ((int)Random.Range(0, (RoomManager.Instance._timeMax - RoomManager.Instance._time)/30f) < 1);
             {
+                Debug.Log("SCREAMER");
                 // generate Screamer
                 GameObject screamer = Instantiate(RoomManager.Instance._screamers[Random.Range(0, RoomManager.Instance._screamers.Length)]);
                 screamer.transform.position = transform.position;

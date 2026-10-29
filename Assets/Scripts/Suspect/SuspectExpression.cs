@@ -23,8 +23,6 @@ public class SuspectExpression : MonoBehaviour
         float angry = suspectData.angry;
         float surprise = suspectData.surprise;
 
-        Debug.Log($"sad {sad} happy {happy} angery {angry} surprise {surprise}");
-
         // -> SAD
         head.SetBlendShapeWeight(4, sad*100);
         head.SetBlendShapeWeight(9, sad*100);
@@ -42,6 +40,5 @@ public class SuspectExpression : MonoBehaviour
         head.SetBlendShapeWeight(6, surprise*100);
         head.SetBlendShapeWeight(11, surprise*100);
 
-        Debug.Log("Update Face");
     }
 }

@@ -36,7 +36,7 @@ public class QuestionManager : MonoBehaviour
         );
 
         if (TryGetComponent(out ClickOnObject cob))
-            cob.Reset();
+            cob.ResetObject(transform);
         
         // question impact
 

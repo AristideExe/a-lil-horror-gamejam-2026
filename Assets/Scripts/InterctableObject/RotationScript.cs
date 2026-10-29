@@ -9,6 +9,15 @@ public class RotationScript : MonoBehaviour
     void Awake()
     {
         _cam = Camera.main;
+        SetLayer(gameObject, 0);
+    }
+    void SetLayer(GameObject obj, int layer)
+    {
+        obj.layer = layer;
+        foreach (Transform child in obj.transform)
+        {
+            SetLayer(child.gameObject, layer);
+        }
     }
 
     [Header("Target")]
@@ -90,13 +99,11 @@ public class RotationScript : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, 100))
         {
-            if (hit.transform != transform)
+            if (!hit.transform.TryGetComponent(out IObject obj))
             {
-                if (TryGetComponent(out ClickOnObject coo))
-                {
-                    coo.enabled = true;
-                    coo.Reset();
-                }
+                ClickOnObject coo = ClickOnObject.Instance;
+                coo.enabled = true;
+                coo.ResetObject(transform);
                 this.enabled = false;
                 return;
             }

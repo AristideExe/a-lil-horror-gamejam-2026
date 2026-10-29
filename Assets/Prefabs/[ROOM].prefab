@@ -335,6 +335,18 @@ PrefabInstance:
       value: light
       objectReference: {fileID: 0}
     - target: {fileID: 5958438921693756439, guid: f1b3f9c812ee2ab4d9db6bef7af8336f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: f1b3f9c812ee2ab4d9db6bef7af8336f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: f1b3f9c812ee2ab4d9db6bef7af8336f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: f1b3f9c812ee2ab4d9db6bef7af8336f, type: 3}
       propertyPath: m_Intensity
       value: 1
       objectReference: {fileID: 0}
@@ -1450,6 +1462,7 @@ MonoBehaviour:
   waitBeforeClose: 2
   openDoorSound: {fileID: 8300000, guid: a0ff3095e2a35a794b7718efbac87c2a, type: 3}
   closeDoorSound: {fileID: 8300000, guid: 61b6cc5ab2e071dd6ade99d6c7e9e700, type: 3}
+  _screamerSound: {fileID: 0}
 --- !u!65 &6665168060339213702
 BoxCollider:
   m_ObjectHideFlags: 0
