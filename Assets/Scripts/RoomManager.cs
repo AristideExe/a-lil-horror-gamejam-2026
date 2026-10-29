@@ -14,8 +14,16 @@ public class RoomManager : MonoBehaviour
     [HideInInspector] public CaseData _currentCase;
     [HideInInspector] public List<SuspectData> _suspects;
     [HideInInspector] public SuspectData[] _currentSuspects;
+
+    [Header("====== ROOM ======")]
     [SerializeField] GameObject _roomPrefab;
+    [SerializeField] GameObject _wallBegin;
+    [SerializeField] GameObject _wallEnd;
+
+    [Header("====== DIFFICULTY ======")]
     [SerializeField] Level _level;
+
+    [Header("====== ANIMATION ======")]
     [SerializeField] AnimatorController _animController;
     [SerializeField] Avatar _avatar;
 
@@ -25,6 +33,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] Camera _overleyCam;
     [SerializeField] GameObject _zoomParent;
     [SerializeField] int _overlayLayerMask;
+
 
     [Header("====== PARENTS ======")]
     [SerializeField] GameObject _suspectParent;
@@ -89,6 +98,8 @@ public class RoomManager : MonoBehaviour
         }
 
         // generating the rooms
+        _wallBegin.transform.position = new Vector3(0, 0, -5);
+        _wallEnd.transform.position = new Vector3((nbSuspect-1)*10, 0, -5);
         for (int i = 0; i < nbSuspect; i++)
         {
             GameObject newRoom = Instantiate(_roomPrefab);
