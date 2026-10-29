@@ -863,7 +863,6 @@ MonoBehaviour:
   _roomPrefab: {fileID: 4175487416181258687, guid: cd8ac11036156634b992251985a3c95c, type: 3}
   _wallBegin: {fileID: 1911231247}
   _wallEnd: {fileID: 467788708}
-  _level: 3
   _animController: {fileID: 9100000, guid: 1a1800e64872fcd4c8d0e6bc38e477cc, type: 2}
   _avatar: {fileID: 9000000, guid: 6e83c864eaf9f024bb811861146c0e7a, type: 3}
   _clipBoardPrefab: {fileID: 865030842012425769, guid: 0b73a4878d259e14d8ba584ca6525fdf, type: 3}

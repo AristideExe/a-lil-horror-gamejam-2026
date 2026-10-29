@@ -1549,6 +1549,7 @@ GameObject:
   - component: {fileID: 1263035123}
   - component: {fileID: 1263035127}
   - component: {fileID: 1263035128}
+  - component: {fileID: 1263035129}
   m_Layer: 0
   m_Name: '[MANAGERS]'
   m_TagString: Untagged
@@ -1668,20 +1669,34 @@ MonoBehaviour:
   _time: 0
   _gameRun: 1
   _startScreamer: 0
-  _screamers: []
+  _screamers:
+  - {fileID: 0}
   _roomPrefab: {fileID: 4175487416181258687, guid: cd8ac11036156634b992251985a3c95c, type: 3}
   _wallBegin: {fileID: 1911231247}
   _wallEnd: {fileID: 467788708}
   _animController: {fileID: 9100000, guid: 1a1800e64872fcd4c8d0e6bc38e477cc, type: 2}
   _avatar: {fileID: 9000000, guid: 6e83c864eaf9f024bb811861146c0e7a, type: 3}
   _clipBoardPrefab: {fileID: 865030842012425769, guid: 0b73a4878d259e14d8ba584ca6525fdf, type: 3}
-  _playerCam: {fileID: 144239490511423157}
-  _overleyCam: {fileID: 984774288}
-  _zoomParent: {fileID: 2023908099}
-  _overlayLayerMask: 0
+  _buttonsPrefab: {fileID: 7141351817240083288, guid: 0e3f0d959e6567a45975252b82aacd7e, type: 3}
   _suspectParent: {fileID: 1182615339}
   _objectParent: {fileID: 2050765783}
   _roomParent: {fileID: 812546211}
+--- !u!114 &1263035129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263035122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ecbfabcc42ae2468c81249c7d0db54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickOnObject
+  _overlayLayerMask: 0
+  _cam: {fileID: 144239490511423157}
+  _overlayCam: {fileID: 984774288}
+  _zoomParent: {fileID: 2023908100}
 --- !u!1 &1328065847 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8974603557503570993, guid: 83c220e30f4f45044b236ce5c37a1702, type: 3}
@@ -2030,9 +2045,9 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.100004196, y: 4.9999995, z: 10}
   m_Center: {x: -4.95, y: 2.4999988, z: -0.0000019073486}
---- !u!1 &2023908099 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4757889286711027165, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
+--- !u!4 &2023908100 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 690935758187726073, guid: 17b0323f60f58d3f39881d163428625b, type: 3}
   m_PrefabInstance: {fileID: 7072688090807473482}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2050765783
