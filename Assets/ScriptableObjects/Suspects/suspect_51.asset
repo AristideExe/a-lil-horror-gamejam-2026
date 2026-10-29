@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-6300208690723901288
+--- !u!28 &-7242685836239223847
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +58,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
   m_Name: suspect_51
   m_EditorClassIdentifier: Assembly-CSharp::SuspectData
-  picture: {fileID: 7312344418862229648}
+  sad: 0
+  angry: 0
+  happy: 0
+  surprise: 0
+  picture: {fileID: 8020825520122573667}
   hair_id: 4
   hair_color: 1
   shirt_color: 2
@@ -117,7 +121,7 @@ MonoBehaviour:
     et j'ai gard\xE9 ma robe verte toute la soir\xE9e."
   s_choice: 0
   s_level: 0
---- !u!213 &7312344418862229648
+--- !u!213 &8020825520122573667
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +147,7 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: -6300208690723901288}
+    texture: {fileID: -7242685836239223847}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -234,7 +238,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: -6300208690723901288}
+    texture: {fileID: -7242685836239223847}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:

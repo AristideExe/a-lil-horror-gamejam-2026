@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-7254426631705533722
+--- !u!28 &-6881127064880440630
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,78 +46,7 @@ Texture2D:
     offset: 0
     size: 0
     path: 
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
-  m_Name: suspect_21
-  m_EditorClassIdentifier: Assembly-CSharp::SuspectData
-  picture: {fileID: 511589633045983778}
-  hair_id: 3
-  hair_color: 0
-  shirt_color: 0
-  pants_color: 4
-  scary_color: 1
-  c_ID: 3
-  s_ID: 21
-  s_name:
-  - Delorme
-  - Philippe
-  - Baron
-  - Bourgeois
-  s_firstName:
-  - Marie
-  - Sabrina
-  - Sophie
-  s_pseudo:
-  - Chamois69
-  - Colibri88
-  - "L\xE9zard77"
-  - Choupi
-  s_age:
-  - 39
-  - 55
-  - 46
-  - 41
-  s_sex:
-  - F
-  s_work:
-  - "Professeure de math\xE9matiques"
-  - Professeure de physique
-  - Professeure de sciences
-  s_height:
-  - 1.56
-  - 1.59
-  - 1.59
-  s_weight:
-  - 53
-  - 56
-  - 63
-  s_alibi:
-  - "Apr\xE8s mon dernier cours \xE0 17h30, j'ai corrig\xE9 12 copies dans ma salle,
-    la 204. J'ai bu un caf\xE9 au distributeur en discutant avec Nicolas. \xC0 19h00,
-    je suis partie en voiture, ma Peugeot grise."
-  - "Apr\xE8s mon dernier cours \xE0 17h30, j'ai corrig\xE9 20 copies dans ma salle,
-    la 204. J'ai bu un caf\xE9 au distributeur en discutant avec Nicolas. \xC0 19h00,
-    je suis partie en voiture, ma Peugeot grise."
-  - "Apr\xE8s mon dernier cours \xE0 17h30, j'ai corrig\xE9 12 copies dans ma salle,
-    la 214. J'ai bu un caf\xE9 au distributeur en discutant avec Nicolas. \xC0 19h00,
-    je suis partie en voiture, ma Peugeot grise."
-  - "Apr\xE8s mon dernier cours \xE0 17h30, j'ai corrig\xE9 12 copies dans ma salle,
-    la 204. J'ai bu un caf\xE9 au distributeur en discutant avec Karim. \xC0 19h00,
-    je suis partie en voiture, ma Peugeot grise."
-  - "Apr\xE8s mon dernier cours \xE0 17h30, j'ai corrig\xE9 12 copies dans ma salle,
-    la 204. J'ai bu un caf\xE9 au distributeur en discutant avec Nicolas. \xC0 18h40,
-    je suis partie en voiture, ma Peugeot grise."
-  s_choice: 0
-  s_level: 0
---- !u!213 &511589633045983778
+--- !u!213 &-2072221754659581422
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +72,7 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: -7254426631705533722}
+    texture: {fileID: -6881127064880440630}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -234,7 +163,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: -7254426631705533722}
+    texture: {fileID: -6881127064880440630}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -327,3 +256,78 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
+  m_Name: suspect_21
+  m_EditorClassIdentifier: Assembly-CSharp::SuspectData
+  sad: 0
+  angry: 0
+  happy: 0
+  surprise: 0
+  picture: {fileID: -2072221754659581422}
+  hair_id: 3
+  hair_color: 0
+  shirt_color: 0
+  pants_color: 4
+  scary_color: 1
+  c_ID: 3
+  s_ID: 21
+  s_name:
+  - Delorme
+  - Philippe
+  - Baron
+  - Bourgeois
+  s_firstName:
+  - Marie
+  - Sabrina
+  - Sophie
+  s_pseudo:
+  - Chamois69
+  - Colibri88
+  - "L\xE9zard77"
+  - Choupi
+  s_age:
+  - 39
+  - 55
+  - 46
+  - 41
+  s_sex:
+  - F
+  s_work:
+  - "Professeure de math\xE9matiques"
+  - Professeure de physique
+  - Professeure de sciences
+  s_height:
+  - 1.56
+  - 1.59
+  - 1.59
+  s_weight:
+  - 53
+  - 56
+  - 63
+  s_alibi:
+  - "Apr\xE8s mon dernier cours \xE0 17h30, j'ai corrig\xE9 12 copies dans ma salle,
+    la 204. J'ai bu un caf\xE9 au distributeur en discutant avec Nicolas. \xC0 19h00,
+    je suis partie en voiture, ma Peugeot grise."
+  - "Apr\xE8s mon dernier cours \xE0 17h30, j'ai corrig\xE9 20 copies dans ma salle,
+    la 204. J'ai bu un caf\xE9 au distributeur en discutant avec Nicolas. \xC0 19h00,
+    je suis partie en voiture, ma Peugeot grise."
+  - "Apr\xE8s mon dernier cours \xE0 17h30, j'ai corrig\xE9 12 copies dans ma salle,
+    la 214. J'ai bu un caf\xE9 au distributeur en discutant avec Nicolas. \xC0 19h00,
+    je suis partie en voiture, ma Peugeot grise."
+  - "Apr\xE8s mon dernier cours \xE0 17h30, j'ai corrig\xE9 12 copies dans ma salle,
+    la 204. J'ai bu un caf\xE9 au distributeur en discutant avec Karim. \xC0 19h00,
+    je suis partie en voiture, ma Peugeot grise."
+  - "Apr\xE8s mon dernier cours \xE0 17h30, j'ai corrig\xE9 12 copies dans ma salle,
+    la 204. J'ai bu un caf\xE9 au distributeur en discutant avec Nicolas. \xC0 18h40,
+    je suis partie en voiture, ma Peugeot grise."
+  s_choice: 0
+  s_level: 0

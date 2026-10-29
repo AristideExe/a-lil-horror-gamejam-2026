@@ -31,10 +31,81 @@ public class QuestionManager : MonoBehaviour
     {
         DialogueSystem.Instance.ShowDialogue(
             $"{_suspect.s_firstName[0]} {_suspect.s_name[0]}",
-            _suspect.allQuestions[IntToChoice(choice)]
+            _suspect.allQuestions[IntToChoice(choice)],
+            _suspect
         );
 
         if (TryGetComponent(out ClickOnObject cob))
             cob.Reset();
+        
+        // question impact
+
+        void ChangeImpact(float sadImpact, float angryImpact, float surpriseImpact, float happyImpact)
+        {
+            _suspect.sad = Math.Clamp(_suspect.sad + sadImpact, 0, 1);
+            _suspect.angry = Math.Clamp(_suspect.angry + angryImpact, 0, 1);
+            _suspect.surprise = Math.Clamp(_suspect.surprise + surpriseImpact, 0, 1);
+            _suspect.happy = Math.Clamp(_suspect.happy + happyImpact, 0, 1);
+        }
+
+        float amount;
+        switch (_suspect.s_level)
+        {
+            case Level.Normal:
+                amount = 1/4;
+                break;
+            case Level.Hard:
+                amount = 1/2;
+                break;
+            case Level.Expert:
+                amount = 1/1;
+                break;
+            default:
+                amount = 1/6;
+                break;
+
+        }
+
+        switch (choice)
+        {
+            case 0:
+                ChangeImpact(amount,amount,amount,amount);
+                break;
+            case 1:
+                ChangeImpact(amount,amount,amount,amount);
+                break;
+            case 2:
+                ChangeImpact(amount,amount,amount,amount);
+                break;
+            case 3:
+                ChangeImpact(2*amount,amount,amount,amount);
+                break;
+            case 4:
+                ChangeImpact(2*amount,2*amount,amount,amount);
+                break;
+            case 5:
+                ChangeImpact(amount,amount,amount,amount);
+                break;
+            case 6:
+                ChangeImpact(amount,amount,amount,amount);
+                break;
+            case 7:
+                ChangeImpact(amount,amount,amount,amount);
+                break;
+            case 8:
+                ChangeImpact(amount/2,amount/2,amount,amount);
+                break;
+            case 9:
+                ChangeImpact(amount,amount,amount,amount);
+                break;
+            default:
+                ChangeImpact(amount/2,amount/2,amount/2,amount/2);
+                break;
+        }
+
+        int statusMax = 3;
+        _suspect.status = Mathf.RoundToInt((_suspect.sad + _suspect.angry + _suspect.surprise + _suspect.happy) / 4 * statusMax);
+
+        RoomManager.Instance._allSuspects[_suspect].GetComponent<SuspectExpression>().UpdateFace(_index);
     } 
 }

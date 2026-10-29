@@ -29,23 +29,19 @@ public class SuspectsManager : MonoBehaviour
         for (int i = 0; i < _levels.Length; i++)
             _levelDict.Add(_levels[i], _levelsBound[i]);
 
-        if (_cases.Length == 0) return;
         _currentCases = _cases[Random.Range(0, _cases.Length)];
         _suspects = _currentCases.suspects;
-
+    }
+    
+    void Start()
+    {
         RoomManager.Instance._currentCase = _currentCases;
         RoomManager.Instance._suspects = _suspects.ToList();
-    }
 
-    bool temp = true;
-    void FixedUpdate()
-    {
-        if (!temp) return;
         _suspects = RoomManager.Instance.GetSuspects(_suspects.ToList());
 
         _suspectsNb = _suspects.Length;
         InitSuspects();
-        temp = false;
     }
 
     class Field { public string[] field; public QuestionChoice choice; };

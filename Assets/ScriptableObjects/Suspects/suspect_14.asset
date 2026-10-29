@@ -1,77 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
-  m_Name: suspect_14
-  m_EditorClassIdentifier: Assembly-CSharp::SuspectData
-  picture: {fileID: 3409289889226642808}
-  hair_id: 3
-  hair_color: 1
-  shirt_color: 4
-  pants_color: 4
-  scary_color: 1
-  c_ID: 2
-  s_ID: 14
-  s_name:
-  - Marques
-  - Blanchard
-  - Lopez
-  - Baron
-  s_firstName:
-  - Sofia
-  - Christiane
-  - Manon
-  s_pseudo:
-  - Lolo
-  - Titi
-  - ColibriFier
-  - Bichon92
-  s_age:
-  - 22
-  - 26
-  - 25
-  - 33
-  s_sex:
-  - F
-  s_work:
-  - "R\xE9ceptionniste"
-  - "H\xF4tesse d'accueil"
-  - "Secr\xE9taire"
-  s_height:
-  - 1.72
-  - 1.74
-  - 1.67
-  s_weight:
-  - 68
-  - 75
-  - 63
-  s_alibi:
-  - "J'ai tenu l'accueil jusqu'\xE0 21h50. J'ai fait 2 fois le tour des vestiaires
-    pour v\xE9rifier qu'il ne restait personne, puis j'ai compt\xE9 la caisse : 140
-    euros. Je suis partie \xE0 21h58 avec mon manteau rouge."
-  - "J'ai tenu l'accueil jusqu'\xE0 21h35. J'ai fait 2 fois le tour des vestiaires
-    pour v\xE9rifier qu'il ne restait personne, puis j'ai compt\xE9 la caisse : 140
-    euros. Je suis partie \xE0 21h58 avec mon manteau rouge."
-  - "J'ai tenu l'accueil jusqu'\xE0 21h50. J'ai fait 1 fois le tour des vestiaires
-    pour v\xE9rifier qu'il ne restait personne, puis j'ai compt\xE9 la caisse : 140
-    euros. Je suis partie \xE0 21h58 avec mon manteau rouge."
-  - "J'ai tenu l'accueil jusqu'\xE0 21h50. J'ai fait 2 fois le tour des vestiaires
-    pour v\xE9rifier qu'il ne restait personne, puis j'ai compt\xE9 la caisse : 410
-    euros. Je suis partie \xE0 21h58 avec mon manteau rouge."
-  - "J'ai tenu l'accueil jusqu'\xE0 21h50. J'ai fait 2 fois le tour des vestiaires
-    pour v\xE9rifier qu'il ne restait personne, puis j'ai compt\xE9 la caisse : 140
-    euros. Je suis partie \xE0 21h58 avec mon manteau beige."
-  s_choice: 0
-  s_level: 0
---- !u!213 &3409289889226642808
+--- !u!213 &-7544950350727978939
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +26,7 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 6578765627215926425}
+    texture: {fileID: 2309191990127234087}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -188,7 +117,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: 6578765627215926425}
+    texture: {fileID: 2309191990127234087}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -281,7 +210,82 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
---- !u!28 &6578765627215926425
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
+  m_Name: suspect_14
+  m_EditorClassIdentifier: Assembly-CSharp::SuspectData
+  sad: 0
+  angry: 0
+  happy: 0
+  surprise: 0
+  picture: {fileID: -7544950350727978939}
+  hair_id: 3
+  hair_color: 1
+  shirt_color: 4
+  pants_color: 4
+  scary_color: 1
+  c_ID: 2
+  s_ID: 14
+  s_name:
+  - Marques
+  - Blanchard
+  - Lopez
+  - Baron
+  s_firstName:
+  - Sofia
+  - Christiane
+  - Manon
+  s_pseudo:
+  - Lolo
+  - Titi
+  - ColibriFier
+  - Bichon92
+  s_age:
+  - 22
+  - 26
+  - 25
+  - 33
+  s_sex:
+  - F
+  s_work:
+  - "R\xE9ceptionniste"
+  - "H\xF4tesse d'accueil"
+  - "Secr\xE9taire"
+  s_height:
+  - 1.72
+  - 1.74
+  - 1.67
+  s_weight:
+  - 68
+  - 75
+  - 63
+  s_alibi:
+  - "J'ai tenu l'accueil jusqu'\xE0 21h50. J'ai fait 2 fois le tour des vestiaires
+    pour v\xE9rifier qu'il ne restait personne, puis j'ai compt\xE9 la caisse : 140
+    euros. Je suis partie \xE0 21h58 avec mon manteau rouge."
+  - "J'ai tenu l'accueil jusqu'\xE0 21h35. J'ai fait 2 fois le tour des vestiaires
+    pour v\xE9rifier qu'il ne restait personne, puis j'ai compt\xE9 la caisse : 140
+    euros. Je suis partie \xE0 21h58 avec mon manteau rouge."
+  - "J'ai tenu l'accueil jusqu'\xE0 21h50. J'ai fait 1 fois le tour des vestiaires
+    pour v\xE9rifier qu'il ne restait personne, puis j'ai compt\xE9 la caisse : 140
+    euros. Je suis partie \xE0 21h58 avec mon manteau rouge."
+  - "J'ai tenu l'accueil jusqu'\xE0 21h50. J'ai fait 2 fois le tour des vestiaires
+    pour v\xE9rifier qu'il ne restait personne, puis j'ai compt\xE9 la caisse : 410
+    euros. Je suis partie \xE0 21h58 avec mon manteau rouge."
+  - "J'ai tenu l'accueil jusqu'\xE0 21h50. J'ai fait 2 fois le tour des vestiaires
+    pour v\xE9rifier qu'il ne restait personne, puis j'ai compt\xE9 la caisse : 140
+    euros. Je suis partie \xE0 21h58 avec mon manteau beige."
+  s_choice: 0
+  s_level: 0
+--- !u!28 &2309191990127234087
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

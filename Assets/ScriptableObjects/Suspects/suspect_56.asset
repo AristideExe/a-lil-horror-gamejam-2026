@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-6242079616763371044
+--- !u!28 &-5839262713566165705
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,7 +46,82 @@ Texture2D:
     offset: 0
     size: 0
     path: 
---- !u!213 &-492335136440716577
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
+  m_Name: suspect_56
+  m_EditorClassIdentifier: Assembly-CSharp::SuspectData
+  sad: 0
+  angry: 0
+  happy: 0
+  surprise: 0
+  picture: {fileID: 1530595944582575704}
+  hair_id: 3
+  hair_color: 0
+  shirt_color: 0
+  pants_color: 3
+  scary_color: 0
+  c_ID: 6
+  s_ID: 56
+  s_name:
+  - Pichon
+  - Renaud
+  - Legrand
+  - Fleury
+  s_firstName:
+  - Arnaud
+  - Adrien
+  - Patrice
+  s_pseudo:
+  - ChatDoux
+  - PieRoux
+  - "H\xE9rissonVif"
+  - "H\xE9ron7"
+  s_age:
+  - 42
+  - 58
+  - 57
+  - 61
+  s_sex:
+  - H
+  s_work:
+  - Critique d'art
+  - Journaliste culturel
+  - Historien de l'art
+  s_height:
+  - 1.91
+  - 1.87
+  - 1.69
+  s_weight:
+  - 81
+  - 88
+  - 64
+  s_alibi:
+  - "J'ai \xE9crit mes notes sur l'exposition dans mon carnet noir, dans la salle
+    3. \xC0 21h20, j'ai parl\xE9 avec B\xE9atrice d'un tableau de Monet. Je suis
+    rest\xE9 dans le hall jusqu'\xE0 21h50."
+  - "J'ai \xE9crit mes notes sur l'exposition dans mon carnet rouge, dans la salle
+    3. \xC0 21h20, j'ai parl\xE9 avec B\xE9atrice d'un tableau de Monet. Je suis
+    rest\xE9 dans le hall jusqu'\xE0 21h50."
+  - "J'ai \xE9crit mes notes sur l'exposition dans mon carnet noir, dans la salle
+    5. \xC0 21h20, j'ai parl\xE9 avec B\xE9atrice d'un tableau de Monet. Je suis
+    rest\xE9 dans le hall jusqu'\xE0 21h50."
+  - "J'ai \xE9crit mes notes sur l'exposition dans mon carnet noir, dans la salle
+    3. \xC0 21h35, j'ai parl\xE9 avec B\xE9atrice d'un tableau de Monet. Je suis
+    rest\xE9 dans le hall jusqu'\xE0 21h50."
+  - "J'ai \xE9crit mes notes sur l'exposition dans mon carnet noir, dans la salle
+    3. \xC0 21h20, j'ai parl\xE9 avec Margaux d'un tableau de Monet. Je suis rest\xE9
+    dans le hall jusqu'\xE0 21h50."
+  s_choice: 0
+  s_level: 0
+--- !u!213 &1530595944582575704
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,7 +147,7 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: -6242079616763371044}
+    texture: {fileID: -5839262713566165705}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -163,7 +238,7 @@ Sprite:
     downscaleMultiplier: 1
   m_AtlasRD:
     serializedVersion: 3
-    texture: {fileID: -6242079616763371044}
+    texture: {fileID: -5839262713566165705}
     alphaTexture: {fileID: 0}
     secondaryTextures: []
     m_SubMeshes:
@@ -256,74 +331,3 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
-  m_Name: suspect_56
-  m_EditorClassIdentifier: Assembly-CSharp::SuspectData
-  picture: {fileID: -492335136440716577}
-  hair_id: 3
-  hair_color: 0
-  shirt_color: 0
-  pants_color: 3
-  scary_color: 0
-  c_ID: 6
-  s_ID: 56
-  s_name:
-  - Pichon
-  - Renaud
-  - Legrand
-  - Fleury
-  s_firstName:
-  - Arnaud
-  - Adrien
-  - Patrice
-  s_pseudo:
-  - ChatDoux
-  - PieRoux
-  - "H\xE9rissonVif"
-  - "H\xE9ron7"
-  s_age:
-  - 42
-  - 58
-  - 57
-  - 61
-  s_sex:
-  - H
-  s_work:
-  - Critique d'art
-  - Journaliste culturel
-  - Historien de l'art
-  s_height:
-  - 1.91
-  - 1.87
-  - 1.69
-  s_weight:
-  - 81
-  - 88
-  - 64
-  s_alibi:
-  - "J'ai \xE9crit mes notes sur l'exposition dans mon carnet noir, dans la salle
-    3. \xC0 21h20, j'ai parl\xE9 avec B\xE9atrice d'un tableau de Monet. Je suis
-    rest\xE9 dans le hall jusqu'\xE0 21h50."
-  - "J'ai \xE9crit mes notes sur l'exposition dans mon carnet rouge, dans la salle
-    3. \xC0 21h20, j'ai parl\xE9 avec B\xE9atrice d'un tableau de Monet. Je suis
-    rest\xE9 dans le hall jusqu'\xE0 21h50."
-  - "J'ai \xE9crit mes notes sur l'exposition dans mon carnet noir, dans la salle
-    5. \xC0 21h20, j'ai parl\xE9 avec B\xE9atrice d'un tableau de Monet. Je suis
-    rest\xE9 dans le hall jusqu'\xE0 21h50."
-  - "J'ai \xE9crit mes notes sur l'exposition dans mon carnet noir, dans la salle
-    3. \xC0 21h35, j'ai parl\xE9 avec B\xE9atrice d'un tableau de Monet. Je suis
-    rest\xE9 dans le hall jusqu'\xE0 21h50."
-  - "J'ai \xE9crit mes notes sur l'exposition dans mon carnet noir, dans la salle
-    3. \xC0 21h20, j'ai parl\xE9 avec Margaux d'un tableau de Monet. Je suis rest\xE9
-    dans le hall jusqu'\xE0 21h50."
-  s_choice: 0
-  s_level: 0
