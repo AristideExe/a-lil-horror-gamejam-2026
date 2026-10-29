@@ -7,8 +7,8 @@ public class MouseLook : MonoBehaviour
     public static MouseLook Instance {private set; get;}
 
     [SerializeField] private Transform player;
-    public float MouseSensivityX { get; set; } = 50f;
-    public float MouseSensivityY { get; set; } = 50f;
+    public float MouseSensivityX { get; set; } = 25f;
+    public float MouseSensivityY { get; set; } = 25f;
     public bool InvertY { get; set; } = false;
     
     [HideInInspector] public bool _canLook;

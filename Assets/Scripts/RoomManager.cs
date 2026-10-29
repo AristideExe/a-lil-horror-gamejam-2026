@@ -29,8 +29,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject _wallEnd;
     public List<Light[]> _lights = new List<Light[]>();
 
-    [Header("====== DIFFICULTY ======")]
-    [SerializeField] Level _level;
+    private Level _level;
 
     [Header("====== ANIMATION ======")]
     [SerializeField] AnimatorController _animController;
@@ -94,6 +93,7 @@ public class RoomManager : MonoBehaviour
 
     public void Start()
     {
+        _level = DifficultyManager.Instance.Difficulty;
         StartCoroutine(TimerC(_timeMax));
         _time += Time.deltaTime;
         _currentSuspects = GetSuspects(_suspects);
