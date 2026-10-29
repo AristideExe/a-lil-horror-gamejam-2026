@@ -9,6 +9,7 @@ public class SuspectsManager : MonoBehaviour
     [Header(">====== CASE ======<")]
     [SerializeField] CaseData[] _cases;
     [SerializeField] CaseData _currentCases;
+    public CaseData CurrentCases => _currentCases;
 
     [Header(">====== SUSPECTS ======<")]
     public SuspectData[] _suspects;    
