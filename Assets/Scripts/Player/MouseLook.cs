@@ -7,8 +7,10 @@ public class MouseLook : MonoBehaviour
     public static MouseLook Instance {private set; get;}
 
     [SerializeField] private Transform player;
-    [SerializeField] private float mouseSensivityX = 50f;
-    [SerializeField] private float mouseSensivityY = 50f;
+    public float MouseSensivityX { get; set; } = 50f;
+    public float MouseSensivityY { get; set; } = 50f;
+    public bool InvertY { get; set; } = false;
+    
     [HideInInspector] public bool _canLook;
     
     private InputAction _look;
@@ -34,10 +36,10 @@ public class MouseLook : MonoBehaviour
         if (!_canLook) return;
         Vector2 look = _look.ReadValue<Vector2>() * Time.deltaTime;
         
-        _xRotation -= look.y * mouseSensivityY;
+        _xRotation -= look.y * MouseSensivityY * (InvertY ? -1f : 1f);
         _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
         
-        player.Rotate(Vector3.up * (look.x * mouseSensivityX));
+        player.Rotate(Vector3.up * (look.x * MouseSensivityX));
         transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
     }
     
