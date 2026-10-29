@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b385e23172be854997a36a9c90678ce, type: 3}
+  m_Name: case_5
+  m_EditorClassIdentifier: Assembly-CSharp::CaseData
+  id: 5
+  context: "LA PROFANATION DE LA TOMBE DELACROIX\nDans la nuit de mardi \xE0 mercredi,
+    la dalle de la s\xE9pulture de la famille Delacroix, au cimeti\xE8re Saint-Louis,
+    a \xE9t\xE9 d\xE9plac\xE9e et le m\xE9daillon en or de la d\xE9funte \xC9l\xE9onore
+    Delacroix a disparu. Le gardien d\xE9couvre les faits \xE0 7h15 le mercredi.
+    Le portail \xE9tait ferm\xE9 depuis 18h et sa serrure est intacte. Les h\xE9ritiers
+    de la famille se disputent depuis des ann\xE9es. Dix personnes li\xE9es au cimeti\xE8re
+    ou \xE0 la famille sont interrog\xE9es."
+  facts: "Portail ferm\xE9 \xE0 18h00, serrure intacte\nDalle de 80 kg d\xE9plac\xE9e
+    avec un levier en acier\nBoue de glaise rouge dans l'all\xE9e 6\nCam\xE9ra de
+    l'entr\xE9e hors service depuis mardi 15h\nUn chien a aboy\xE9 vers 0h30 chez
+    un voisin\nTrace d'escalade sur le mur c\xF4t\xE9 rue du Moulin\nBrume \xE9paisse
+    toute la nuit"
+  suspects:
+  - {fileID: 11400000, guid: 8325389cd72d97b42885ea2e0efc92f8, type: 2}

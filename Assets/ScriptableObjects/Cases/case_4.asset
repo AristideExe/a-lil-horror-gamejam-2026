@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b385e23172be854997a36a9c90678ce, type: 3}
+  m_Name: case_4
+  m_EditorClassIdentifier: Assembly-CSharp::CaseData
+  id: 4
+  context: "L'INCENDIE DE LA CABANE DU GARDE, FOR\xCAT DE BR\xC9VANE\nUn samedi soir
+    de novembre, vers 19h30, la cabane du garde forestier Roger Vasseur prend feu
+    au c\u0153ur de la for\xEAt de Br\xE9vane. Le garde, absent, retrouve un bidon
+    d'essence vide \xE0 dix m\xE8tres des ruines et une empreinte de botte. L'incendie
+    a d\xE9truit ses registres de coupes de bois : il enqu\xEAtait depuis des mois
+    sur des abattages ill\xE9gaux. \xC0 cette heure, la for\xEAt \xE9tait fr\xE9quent\xE9e
+    par des chasseurs, des b\xFBcherons, des promeneurs et des apiculteurs."
+  facts: "D\xE9part de feu estim\xE9 \xE0 19h30\nFum\xE9e aper\xE7ue depuis la cr\xEAte
+    \xE0 19h35\nBarri\xE8re de l'all\xE9e des Ch\xEAnes ouverte depuis 19h05\nBidon
+    d'essence de 5 litres, bouchon vert\nEmpreintes de bottes pointure 43, semelle
+    crant\xE9e\nNuit tomb\xE9e d\xE8s 18h, brume \xE9paisse"
+  suspects:
+  - {fileID: 11400000, guid: ef8fda90cb75094458883ca20a098007, type: 2}

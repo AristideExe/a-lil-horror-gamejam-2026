@@ -9,6 +9,7 @@ public class QuestionManager : MonoBehaviour
 
     void Start()
     {
+        if (SuspectsManager.Instance._suspects.Length == 0) return;
         _suspect = SuspectsManager.Instance._suspects[_index];
     }
 
