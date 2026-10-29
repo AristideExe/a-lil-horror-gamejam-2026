@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class RoomManager : MonoBehaviour
 {
@@ -34,6 +36,8 @@ public class RoomManager : MonoBehaviour
     [SerializeField] GameObject _zoomParent;
     [SerializeField] int _overlayLayerMask;
 
+    [Header("====== SUSPECTS =====")]
+    [HideInInspector] public Dictionary<SuspectData, GameObject> _allSuspects = new Dictionary<SuspectData, GameObject>();
 
     [Header("====== PARENTS ======")]
     [SerializeField] GameObject _suspectParent;
@@ -43,14 +47,12 @@ public class RoomManager : MonoBehaviour
     int nbSuspect = 0;
     public SuspectData[] GetSuspects(List<SuspectData> suspects)
     {
+        if (_currentSuspects.Length > 0) return _currentSuspects;
         // Only get a number of suspect depend on the difficulty
-        if (nbSuspect == 0)
-        {
-            nbSuspect = suspects.Count;
-            if (_level == Level.Easy) nbSuspect = 3;
-            if (_level == Level.Normal) nbSuspect = 5;
-            if (_level == Level.Hard) nbSuspect = 8;
-        }
+         nbSuspect = suspects.Count;
+        if (_level == Level.Easy) nbSuspect = 3;
+        if (_level == Level.Normal) nbSuspect = 5;
+        if (_level == Level.Hard) nbSuspect = 8;
 
         List<SuspectData> currentSuspects = new();
         for (int i = 0; i < nbSuspect; i++)
@@ -67,6 +69,9 @@ public class RoomManager : MonoBehaviour
     public void Start()
     {
         _currentSuspects = GetSuspects(_suspects);
+
+        Debug.Log($"nbSustect: {nbSuspect}");
+
         for (int i = 0; i < nbSuspect; i++)
         {
             SuspectData suspect = _currentSuspects[i];
@@ -92,9 +97,16 @@ public class RoomManager : MonoBehaviour
                     animator.runtimeAnimatorController = _animController;
                     animator.avatar = _avatar;
                     animator.applyRootMotion = true;
+                    animator.animatePhysics = true;
+                    animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
                     animator.SetBool("sit", true);
                 }
             }
+
+            // Add suspect Exrpession Component to manage the fac expression
+            model[0].AddComponent<SuspectExpression>();
+
+            _allSuspects.Add(suspect, model[0]);
         }
 
         // generating the rooms

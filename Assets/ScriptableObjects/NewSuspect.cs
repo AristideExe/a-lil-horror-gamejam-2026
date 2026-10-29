@@ -10,6 +10,12 @@ using UnityEngine;
 public class SuspectData : ScriptableObject
 {
     // The fisrt one is the truth the other one are lie
+    [Header(">===== EXPESSION ======<")]
+    public float sad;
+    public float angry;
+    public float happy;
+    public float surprise;
+
 
     public Sprite picture;
 

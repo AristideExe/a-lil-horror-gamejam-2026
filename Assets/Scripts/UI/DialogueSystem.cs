@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -20,13 +21,16 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] float _delay;
     private bool _isTyping = false;
 
-    public void ShowDialogue(string name, string text)
+    private SuspectData _suspect;
+
+    public void ShowDialogue(string name, string text, SuspectData suspect)
     {
         // this function allow us to show a diaologue in game
         _dialogueBox.SetActive(true);
         _name.text = name;
         _text.text = text;
         _text.pageToDisplay = 0;
+        _suspect = suspect;
         Next();
     }
 
@@ -38,9 +42,7 @@ public class DialogueSystem : MonoBehaviour
     void Update()
     {
         if (!_isTyping && Input.anyKeyDown)
-        {
             Next();
-        }
     }
 
     IEnumerator ShowTextRoutine(TextMeshProUGUI tmpText)
@@ -49,6 +51,15 @@ public class DialogueSystem : MonoBehaviour
 
         int startIndex = GetFirstIndex(tmpText);
         int lastIndex = GetLastIndex(tmpText);
+
+        // Get suspect head for mouth animation
+        SkinnedMeshRenderer[] allRenderers = RoomManager.Instance._allSuspects[_suspect].GetComponentsInChildren<SkinnedMeshRenderer>();
+        SkinnedMeshRenderer head = null;
+        foreach (var rend in allRenderers)
+        {
+            if (rend.name.ToLower().Contains("head"))
+                head = rend;
+        }
 
         tmpText.maxVisibleCharacters = startIndex;
         yield return null; // Wait one fram to avoid skipping the animation
@@ -62,6 +73,13 @@ public class DialogueSystem : MonoBehaviour
 
             tmpText.maxVisibleCharacters = i;
             yield return new WaitForSeconds(_delay);
+
+            // Animate the mouth
+            float angle = i * (2f * Mathf.PI / 5);
+            float mouthOpen = Mathf.Abs(Mathf.Sin(angle));
+            Debug.Log((int)(mouthOpen*100));
+            head.SetBlendShapeWeight(11, (int)(mouthOpen*100));
+            
         }
 
         yield return null; 

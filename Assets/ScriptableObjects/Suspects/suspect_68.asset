@@ -21,7 +21,7 @@ Sprite:
   m_IsPolygon: 0
   m_PackingTag: 
   m_RenderDataKey:
-    00000000000000000000000000000000: 0
+    c03f77978769dae4c82a507d988c28ad: -6239572652744954787
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -268,6 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e02d5b5eacce440876a2cc631c16ea, type: 3}
   m_Name: suspect_68
   m_EditorClassIdentifier: Assembly-CSharp::SuspectData
+  sad: 1
+  angry: 0
+  happy: 0
+  surprise: 0
   picture: {fileID: -6239572652744954787}
   hair_id: 4
   hair_color: 2

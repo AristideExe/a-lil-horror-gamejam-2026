@@ -177,6 +177,11 @@ namespace CSVGeneration
             suspect.s_weight = s_weight;
             suspect.s_alibi = s_alibi;
 
+            suspect.sad = 0;
+            suspect.happy = 0;
+            suspect.angry = 0;
+            suspect.surprise = 0;
+
             // Create the scriptable object
             string assetPath = $"Assets/ScriptableObjects/Suspects/suspect_{s_ID}.asset";
             AssetDatabase.CreateAsset(suspect, assetPath);

@@ -31,10 +31,33 @@ public class QuestionManager : MonoBehaviour
     {
         DialogueSystem.Instance.ShowDialogue(
             $"{_suspect.s_firstName[0]} {_suspect.s_name[0]}",
-            _suspect.allQuestions[IntToChoice(choice)]
+            _suspect.allQuestions[IntToChoice(choice)],
+            _suspect
         );
 
         if (TryGetComponent(out ClickOnObject cob))
             cob.Reset();
+        
+        // question impact
+
+        void ChangeImpact(float sadImpact, float angryImpact, float surpriseImpact, float happyImpact)
+        {
+            _suspect.sad = Math.Clamp(_suspect.sad + sadImpact, 0, 1);
+            _suspect.angry = Math.Clamp(_suspect.sad + angryImpact, 0, 1);
+            _suspect.surprise = Math.Clamp(_suspect.sad + surpriseImpact, 0, 1);
+            _suspect.happy = Math.Clamp(_suspect.sad + happyImpact, 0, 1);
+        }
+
+        switch (choice)
+        {
+            case 0 : // Name
+                ChangeImpact(.5f,.5f,.5f,.5f);
+                break;
+            default : 
+                ChangeImpact(0,0,1,0);
+                break;
+        }
+
+        RoomManager.Instance._allSuspects[_suspect].GetComponent<SuspectExpression>().UpdateFace(_index);
     } 
 }
