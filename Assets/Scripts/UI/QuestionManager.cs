@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class QuestionManager : MonoBehaviour
 {
     private SuspectData _suspect;
-    [SerializeField] int _index = 0;
+    [HideInInspector] public int index = 0;
 
     void Start()
     {
         if (SuspectsManager.Instance._suspects.Length == 0) return;
-        _suspect = SuspectsManager.Instance._suspects[_index];
+        _suspect = SuspectsManager.Instance._suspects[index];
     }
 
     QuestionChoice StringToChoice(string name)
@@ -95,6 +95,6 @@ public class QuestionManager : MonoBehaviour
         int statusMax = 3;
         _suspect.status = Mathf.RoundToInt((_suspect.sad + _suspect.angry + _suspect.surprise + _suspect.happy) / 4 * statusMax);
 
-        RoomManager.Instance._allSuspects[_suspect].GetComponent<SuspectExpression>().UpdateFace(_index);
+        RoomManager.Instance._allSuspects[_suspect].GetComponent<SuspectExpression>().UpdateFace(index);
     } 
 }

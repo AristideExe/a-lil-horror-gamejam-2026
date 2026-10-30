@@ -210,6 +210,9 @@ public class SuspectsManager : MonoBehaviour
             // --- Generate Answers --- // 
             // Get all the field where the suspect can lie
             List<Field> fields = GetFields(suspect, true);
+            Debug.Log("NEW");
+            foreach (Field field in fields)
+                Debug.Log(field);
             // Getting the number of lie
             int minLie = (int)_levelDict[suspect.s_level].x;
             int maxLie = (int)_levelDict[suspect.s_level].y;

@@ -182,6 +182,8 @@ public class RoomManager : MonoBehaviour
 
             if (clipBoard.TryGetComponent(out CreateSuspectClipBoard cscb))
                 cscb._index = i;
+            QuestionManager question = clipBoard.GetComponentInChildren<QuestionManager>();
+            question.index = i;
         }
 
         // -> buttons

@@ -60,7 +60,8 @@ public class SuspectGeneration : MonoBehaviour
                 _shirt = rend;
             if (rend.name.ToLower().Contains($"hair"))
                 rend.gameObject.SetActive(false);
-            if (rend.name.ToLower().Contains($"hair.{gender.ToLower()}.{hair_id}"))
+            string genderFR = gender.ToLower() == "m" ? "h" : "f";
+            if (rend.name.ToLower().Contains($"hair.{genderFR}.{hair_id}"))
             {
                 _hair = rend;
                 rend.gameObject.SetActive(true);
