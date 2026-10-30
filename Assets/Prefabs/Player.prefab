@@ -3585,7 +3585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   _controller: {fileID: 2614463039492092881}
-  speed: 2.5
+  walkingSpeed: 2.5
+  runningSpeed: 6
   _animator: {fileID: 490613161274284379}
   _smoothSpeed: 5
 --- !u!143 &2614463039492092881

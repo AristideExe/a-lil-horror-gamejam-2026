@@ -4,8 +4,10 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController _controller;
-    [SerializeField] public float speed = 12f;
+    [SerializeField] public float walkingSpeed = 3f;
+    [SerializeField] public float runningSpeed = 18f;
     private InputAction _move;
+    private InputAction _sprint;
 
     [Header("====== Animations ======")]
     [SerializeField] private Animator _animator;
@@ -18,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         _move = InputSystem.actions.FindAction("Move");
+        _sprint = InputSystem.actions.FindAction("Sprint");
         _velocityHash = Animator.StringToHash("velocity");
         _walkingHash = Animator.StringToHash("walking");
     }
@@ -25,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (!_controller.enabled) return;
+        float speed = _sprint.IsPressed() ? runningSpeed : walkingSpeed;
         Vector2 move = _move.ReadValue<Vector2>();
         Vector3 movement = transform.forward * move.y + transform.right * move.x;
         movement.y = 0;
