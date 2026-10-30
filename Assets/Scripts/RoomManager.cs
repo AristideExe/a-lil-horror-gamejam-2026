@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine;
-using Unity.VisualScripting;
 
 public class RoomManager : MonoBehaviour
 {
@@ -34,7 +32,7 @@ public class RoomManager : MonoBehaviour
     private Level _level;
 
     [Header("====== ANIMATION ======")]
-    [SerializeField] AnimatorController _animController;
+    [SerializeField] RuntimeAnimatorController _animController;
     [SerializeField] Avatar _avatar;
 
     [Header("====== OBJECTS =====")]
