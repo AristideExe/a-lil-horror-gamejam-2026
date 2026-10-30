@@ -1,5 +1,7 @@
 using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -12,27 +14,33 @@ public class QuestionManager : MonoBehaviour
         _suspect = SuspectsManager.Instance._suspects[_index];
     }
 
-    QuestionChoice IntToChoice(int i)
+    QuestionChoice StringToChoice(string name)
     {
-        if (i == 0) return QuestionChoice.Name;
-        if (i == 1) return QuestionChoice.FirstName;
-        if (i == 2) return QuestionChoice.Pseudo;
-        if (i == 3) return QuestionChoice.Age;
-        if (i == 4) return QuestionChoice.Sex;
-        if (i == 5) return QuestionChoice.Work;
-        if (i == 8) return QuestionChoice.Height;
-        if (i == 9) return QuestionChoice.Weight;
-        if (i == 10) return QuestionChoice.Alibi;
+        if (name.ToLower().Contains("name")) return QuestionChoice.Name;
+        if (name.ToLower().Contains("firstname")) return QuestionChoice.FirstName;
+        if (name.ToLower().Contains("pseudo")) return QuestionChoice.Pseudo;
+        if (name.ToLower().Contains("age")) return QuestionChoice.Age;
+        if (name.ToLower().Contains("sex")) return QuestionChoice.Sex;
+        if (name.ToLower().Contains("work")) return QuestionChoice.Work;
+        if (name.ToLower().Contains("height")) return QuestionChoice.Height;
+        if (name.ToLower().Contains("weight")) return QuestionChoice.Weight;
+        if (name.ToLower().Contains("alibi")) return QuestionChoice.Alibi;
         else return QuestionChoice.Name;
     }
 
-    public void AskQuestion(int choice)
+    public void AskQuestion(TextMeshProUGUI field)
     {
         DialogueSystem.Instance.ShowDialogue(
             $"{_suspect.s_firstName[0]} {_suspect.s_name[0]}",
-            _suspect.allQuestions[IntToChoice(choice)],
+            _suspect.allQuestions[StringToChoice(field.name)],
             _suspect
         );
+
+        // disable text
+        field.enabled = false;
+        GameObject Parent = field.GetComponentInParent<Image>().gameObject;
+        Button Button = Parent.GetComponentInParent<Button>();
+        Button.interactable = false;
 
         if (TryGetComponent(out ClickOnObject cob))
             cob.ResetObject(transform);
@@ -51,56 +59,38 @@ public class QuestionManager : MonoBehaviour
         switch (_suspect.s_level)
         {
             case Level.Normal:
-                amount = 1/4;
+                amount = 1/4f;
                 break;
             case Level.Hard:
-                amount = 1/2;
+                amount = 1/2f;
                 break;
             case Level.Expert:
-                amount = 1/1;
+                amount = 1/1f;
                 break;
             default:
-                amount = 1/6;
+                amount = 1/6f;
                 break;
 
         }
 
-        switch (choice)
-        {
-            case 0:
-                ChangeImpact(amount,amount,amount,amount);
-                break;
-            case 1:
-                ChangeImpact(amount,amount,amount,amount);
-                break;
-            case 2:
-                ChangeImpact(amount,amount,amount,amount);
-                break;
-            case 3:
-                ChangeImpact(2*amount,amount,amount,amount);
-                break;
-            case 4:
-                ChangeImpact(2*amount,2*amount,amount,amount);
-                break;
-            case 5:
-                ChangeImpact(amount,amount,amount,amount);
-                break;
-            case 6:
-                ChangeImpact(amount,amount,amount,amount);
-                break;
-            case 7:
-                ChangeImpact(amount,amount,amount,amount);
-                break;
-            case 8:
-                ChangeImpact(amount/2,amount/2,amount,amount);
-                break;
-            case 9:
-                ChangeImpact(amount,amount,amount,amount);
-                break;
-            default:
-                ChangeImpact(amount/2,amount/2,amount/2,amount/2);
-                break;
-        }
+        if (field.name.ToLower().Contains("name"))
+            ChangeImpact(amount,amount,amount,amount);
+        if (field.name.ToLower().Contains("firstname"))
+            ChangeImpact(amount,amount,amount,amount);
+        if (field.name.ToLower().Contains("pseudo"))
+            ChangeImpact(2*amount,amount,amount,amount);
+        if (field.name.ToLower().Contains("age"))
+            ChangeImpact(2*amount,amount,amount,amount);
+        if (field.name.ToLower().Contains("sex"))
+            ChangeImpact(2*amount,2*amount,2*amount,amount);
+        if (field.name.ToLower().Contains("work"))
+            ChangeImpact(amount/2,amount/2,amount,amount);
+        if (field.name.ToLower().Contains("height"))
+            ChangeImpact(amount/2,amount,amount,amount);
+        if (field.name.ToLower().Contains("weight"))
+            ChangeImpact(2*amount,2*amount,amount,amount);
+        if (field.name.ToLower().Contains("alibi"))
+            ChangeImpact(amount/2,amount/2,amount/2,amount/2);
 
         int statusMax = 3;
         _suspect.status = Mathf.RoundToInt((_suspect.sad + _suspect.angry + _suspect.surprise + _suspect.happy) / 4 * statusMax);
