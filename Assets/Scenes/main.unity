@@ -1767,7 +1767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ecbfabcc42ae2468c81249c7d0db54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickOnObject
-  _overlayLayerMask: 0
+  _overlayLayerMask: 5
   _cam: {fileID: 144239490511423157}
   _overlayCam: {fileID: 984774288}
   _zoomParent: {fileID: 2023908100}

@@ -40,11 +40,11 @@ public class ClickOnObject : MonoBehaviour
         _cam = Camera.main;
            
         _defaultLayerMask = gameObject.layer;
-        SetLayer(gameObject, 0);
     }
 
     void SetLayer(GameObject obj, int layer)
     {
+        Debug.Log("SETLAYER :" + obj.name);
         obj.layer = layer;
         foreach (Transform child in obj.transform)
         {
@@ -54,7 +54,7 @@ public class ClickOnObject : MonoBehaviour
 
     public void ResetObject(Transform transform)
     {
-        SetLayer(gameObject, 0);
+        SetLayer(transform.gameObject, 0);
         // _blurBackground.SetActive(false);
 
         transform.position = _oldPos;
@@ -88,7 +88,7 @@ public class ClickOnObject : MonoBehaviour
                     hit.transform.parent = _zoomParent;
 
                     // Set the layer of the object and its children to the overlay layer
-                    SetLayer(gameObject, _overlayLayerMask);
+                    SetLayer(hit.transform.gameObject, _overlayLayerMask);
                     
                     // Enable all buttons
                     Button[] allButtons = GetComponentsInChildren<Button>();
