@@ -158,8 +158,8 @@ public class RoomManager : MonoBehaviour
         }
 
         // generating the rooms
-        _wallBegin.transform.position = new Vector3(0, 0, -5);
-        _wallEnd.transform.position = new Vector3((nbSuspect-1)*10.1f, 0, -5);
+        _wallBegin.transform.position = new Vector3(0, 0, -10);
+        _wallEnd.transform.position = new Vector3((nbSuspect-1)*10.1f, 0, -10);
         for (int i = 0; i < nbSuspect; i++)
         {
             GameObject newRoom = Instantiate(_roomPrefab);

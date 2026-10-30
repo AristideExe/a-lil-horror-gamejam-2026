@@ -21,7 +21,10 @@ public class CaseUI : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && canFinish)
+        {
             gameObject.SetActive(false);
+            MouseLook.Instance.enabled = true;
+        }
         if (Input.GetKeyDown(KeyCode.Space) && !canFinish)
             Next();
 
