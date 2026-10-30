@@ -1690,7 +1690,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Nom Jeu
+  m_text: 'Quiet Rooms
 
 '
   m_isRightToLeft: 0
