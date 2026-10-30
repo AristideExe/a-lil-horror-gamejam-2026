@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using Unity.VisualScripting;
-using System;
 public class GuiltyButton : MonoBehaviour, IButton
 {
     public int index;

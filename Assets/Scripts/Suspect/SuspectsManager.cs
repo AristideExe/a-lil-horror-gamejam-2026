@@ -187,14 +187,15 @@ public class SuspectsManager : MonoBehaviour
         }
     }
 
-    void InitSuspects()
+    public bool suspectsInitiated = false;
+    public void InitSuspects()
     {
         bool oneLied = false;
         for (int i = 0; i < _suspectsNb; i++)
         {
             SuspectData suspect = _suspects[i];
 
-            // Reste suspect questions
+            // Reset suspect questions
             suspect.allQuestions = new();
 
             int rng = Random.Range(0, _suspectsNb);
@@ -253,5 +254,6 @@ public class SuspectsManager : MonoBehaviour
             }
 
         }
+        suspectsInitiated = true;
     }
 }
