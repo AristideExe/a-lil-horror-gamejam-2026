@@ -17,11 +17,13 @@ public class GuiltyButton : MonoBehaviour, IButton
         // Explosion of Suspect
         GameObject suspect = RoomManager.Instance._allSuspects[RoomManager.Instance._currentSuspects[index]].gameObject;
         ParticleSystem explosion = Instantiate(_explosion);
-        explosion.transform.position = suspect.transform.position + Vector3.up;
+        explosion.transform.position = suspect.transform.position + Vector3.up*1.5f;
         explosion.Play();
         RoomManager.Instance.ChangeLight(index, Color.red, 3f);
         suspect.SetActive(false);
         // End of game
+        RoomManager.Instance.KilledNb++;
+
     }
 
     public IEnumerator ClickButton()

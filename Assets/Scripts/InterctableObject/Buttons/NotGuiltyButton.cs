@@ -15,6 +15,7 @@ public class NotGuiltyButton : MonoBehaviour, IButton
         // Change Lights To Green
         RoomManager.Instance.ChangeLight(index, Color.green, 3f);
         // End of game
+        RoomManager.Instance.livedNb++;
     }
 
     public IEnumerator ClickButton()

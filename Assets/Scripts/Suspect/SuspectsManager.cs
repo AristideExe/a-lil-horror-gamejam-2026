@@ -217,10 +217,15 @@ public class SuspectsManager : MonoBehaviour
 
             // Get a field to lie in the list and create an answer
             // Add the alibi
-            if (fields.Count == 0)
-                Debug.LogError($"No Field for {suspect.s_ID} {suspect}");
-            rng = Random.Range(1, fields[0].field.Length);
-            suspect.allQuestions[fields[0].choice] = GenerateAnswer(fields[0].choice, fields[0].field[rng]);
+            if (suspect.s_choice == SuspectChoice.Lie)
+            {
+                if (fields.Count == 0)
+                    Debug.LogError($"No Field for {suspect.s_ID} {suspect}");
+                rng = Random.Range(1, fields[0].field.Length);
+                suspect.allQuestions[fields[0].choice] = GenerateAnswer(fields[0].choice, fields[0].field[rng]);
+            }
+            else
+                suspect.allQuestions[fields[0].choice] = GenerateAnswer(fields[0].choice, fields[0].field[0]);
             // Debug.Log($"LIE => {fields[0].choice} : {GenerateAnswer(fields[0].choice, fields[0].field[rng])}");
             fields.Remove(fields[0]);
 
