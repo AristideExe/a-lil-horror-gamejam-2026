@@ -20,8 +20,10 @@ public class RoomManager : MonoBehaviour
     [SerializeField] public float _timeMax = 600f; // 5 min
     [SerializeField] public float _time = 0;
     [SerializeField] public bool _gameRun = true;
-    [SerializeField] public bool _startScreamer = false;
-    [SerializeField] public GameObject[] _screamers;
+    [SerializeField] public int livedNb = 0;
+    [SerializeField] public int KilledNb = 0;
+    // [SerializeField] public bool _startScreamer = false;
+    [SerializeField] public UIRecap _UIRecap;
 
     [Header("====== ROOM ======")]
     [SerializeField] GameObject _roomPrefab;
@@ -84,18 +86,36 @@ public class RoomManager : MonoBehaviour
     IEnumerator TimerC(float time)
     {
         _gameRun = true;
-        _startScreamer = false;
+        // _startScreamer = false;
         yield return new WaitForSeconds(time/2);
-        _startScreamer = true;
+        // _startScreamer = true;
         yield return new WaitForSeconds(time/2);
         _gameRun = false;
+    }
+
+    void Update()
+    {
+        _time += Time.deltaTime;
+        
+        if (livedNb == nbSuspect-1)
+            _gameRun = false;
+        if (KilledNb == nbSuspect/3)
+            _gameRun = false;
+
+        if (!_gameRun)
+            EndGame();
+    }
+
+    void EndGame()
+    {
+        _UIRecap.CreateRecap();
+        Destroy(this);
     }
 
     IEnumerator Start()
     {
         _level = DifficultyManager.Instance.Difficulty;
         StartCoroutine(TimerC(_timeMax));
-        _time += Time.deltaTime;
         _currentSuspects = GetSuspects(_suspects);
 
         while (!SuspectsManager.Instance.suspectsInitiated)
