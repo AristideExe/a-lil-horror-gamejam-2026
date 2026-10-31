@@ -1599,7 +1599,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1476421647}
   m_Father: {fileID: 188508857}
@@ -1608,7 +1608,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!1 &1263035122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,7 +1739,7 @@ MonoBehaviour:
   _currentCase: {fileID: 0}
   _suspects: []
   _currentSuspects: []
-  _timeMax: 600
+  _timeMax: 300
   _time: 0
   _gameRun: 1
   livedNb: 0
@@ -1755,6 +1755,7 @@ MonoBehaviour:
   _suspectParent: {fileID: 1182615339}
   _objectParent: {fileID: 2050765783}
   _roomParent: {fileID: 812546211}
+  gameStart: 0
 --- !u!114 &1263035129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2164,7 +2165,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1247444934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2172,7 +2173,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -30, y: 20}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1476421648
 MonoBehaviour:
   m_ObjectHideFlags: 0

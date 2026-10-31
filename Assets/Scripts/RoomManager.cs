@@ -85,14 +85,17 @@ public class RoomManager : MonoBehaviour
     {
         _gameRun = true;
         // _startScreamer = false;
-        yield return new WaitForSeconds(time/2);
-        // _startScreamer = true;
-        yield return new WaitForSeconds(time/2);
+        // yield return new WaitForSeconds(time/2);
+        // // _startScreamer = true;
+        // yield return new WaitForSeconds(time/2);
+        yield return new WaitForSeconds(time);
         _gameRun = false;
     }
 
+    public bool gameStart = false;
     void Update()
     {
+        if (!gameStart) return;
         _time += Time.deltaTime;
         
         if (livedNb == nbSuspect-1)
