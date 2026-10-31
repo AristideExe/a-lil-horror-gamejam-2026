@@ -13,18 +13,16 @@ MonoBehaviour:
   m_Name: case_5
   m_EditorClassIdentifier: Assembly-CSharp::CaseData
   id: 5
-  context: "LA PROFANATION DE LA TOMBE DELACROIX\nDans la nuit de mardi \xE0 mercredi,
-    la dalle de la s\xE9pulture de la famille Delacroix, au cimeti\xE8re Saint-Louis,
-    a \xE9t\xE9 d\xE9plac\xE9e et le m\xE9daillon en or de la d\xE9funte \xC9l\xE9onore
-    Delacroix a disparu. Le gardien d\xE9couvre les faits \xE0 7h15 le mercredi.
-    Le portail \xE9tait ferm\xE9 depuis 18h et sa serrure est intacte. Les h\xE9ritiers
-    de la famille se disputent depuis des ann\xE9es. Dix personnes li\xE9es au cimeti\xE8re
-    ou \xE0 la famille sont interrog\xE9es."
-  facts: "Portail ferm\xE9 \xE0 18h00, serrure intacte\nDalle de 80 kg d\xE9plac\xE9e
-    avec un levier en acier\nBoue de glaise rouge dans l'all\xE9e 6\nCam\xE9ra de
-    l'entr\xE9e hors service depuis mardi 15h\nUn chien a aboy\xE9 vers 0h30 chez
-    un voisin\nTrace d'escalade sur le mur c\xF4t\xE9 rue du Moulin\nBrume \xE9paisse
-    toute la nuit"
+  context: "THE DESECRATION OF DELACROIX\u2019S TOMB\nDuring the night from Tuesday
+    to Wednesday, the slab of the Delacroix family\u2019s tomb in Saint-Louis cemetery
+    was moved and the gold medallion of the late \xC9l\xE9onore Delacroix disappeared.
+    The guard discovered the facts at 7:15 a.m. on Wednesday. The gate had been closed
+    since 6 p.m. and its lock is intact. The heirs of the family have been arguing
+    for years. Ten people related to the cemetery or the family must be questioned."
+  facts: "Gate closed at 6:00 p.m., lock intact and 80 kg door moved with a steel
+    lever and red clay door in aisle 6. \nEntrance camera out of service since Tuesday
+    at 3 p.m. \nA dog barked around 12:30 a.m. at a nearby climbing site on the wall
+    on the street side of Moulin\nBrume \xE9paisse all night."
   suspects:
   - {fileID: 11400000, guid: 6b5d7b66de993d548a9613d4835126a7, type: 2}
   - {fileID: 11400000, guid: 1547106daf824fe439d4d3ef5a9261c6, type: 2}

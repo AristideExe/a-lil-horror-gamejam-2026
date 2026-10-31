@@ -25,7 +25,10 @@ public class DialogueSystem : MonoBehaviour
     public void ShowDialogue(string name, string text, SuspectData suspect)
     {
         // this function allow us to show a diaologue in game
-        if (suspect.status == 3) return;
+        if (suspect.status == 3)
+        {
+            text = SuspectsManager.Instance.GenerateAnswer(QuestionChoice.Null, " ");   
+        }
 
         dialogueBox.SetActive(true);
         _name.text = name;

@@ -13,17 +13,16 @@ MonoBehaviour:
   m_Name: case_1
   m_EditorClassIdentifier: Assembly-CSharp::CaseData
   id: 1
-  context: "LE COFFRE VID\xC9 DU MARCH\xC9 VERT\nUn samedi soir de mars, apr\xE8s
-    la fermeture du supermarch\xE9 Le March\xE9 Vert, la caisse centrale (11 480
-    \u20AC en esp\xE8ces) a disparu du bureau du g\xE9rant entre 20h50 et 21h15.
-    Le coffre a \xE9t\xE9 ouvert avec le bon code, sans effraction. Le magasin \xE9tait
-    ferm\xE9 au public depuis 20h30, mais dix personnes (personnel ou fournisseurs)
-    \xE9taient encore sur place. Le voleur est reparti par la porte arri\xE8re avec
-    l'argent dans un sac."
-  facts: "Fermeture au public : 20h30\nIl pleut depuis 20h45\nBadge n\xB07 utilis\xE9
-    sur la porte du bureau \xE0 20h48\nCam\xE9ra du parking coup\xE9e \xE0 20h52\nUn
-    homme est film\xE9 sortant par la porte arri\xE8re \xE0 21h04 avec un sac de
-    sport bleu\nLe portail du quai de livraison a claqu\xE9 vers 21h00"
+  context: "THE GREEN MARKET SAFE ROBBED\nOn Saturday evening, after the closure
+    of the supermarket Le March\xE9 Vert, the central cash register ($11,480 in cash)
+    disappeared from the manager\u2019s office between 8:50 p.m. and 9:15 p.m. The
+    safe was opened with the correct code, no break-in. The store was closed to the
+    public since 8:30 p.m., but ten people (staff or suppliers) were still on site.
+    The thief left through the back door with the money in a bag."
+  facts: "Closed to the public: 8:30 p.m. \nIt has been raining since 8:45 p.m. \nBadge
+    no. 7 used on the office door at 8:48 p.m. \nParking lot camera cut off at 8:52
+    p.m. \nA man is filmed leaving through the back door at 9:04 p.m. with a blue
+    sports bag \nThe gate of the delivery platform was slammed shut around 9:00 p.m."
   suspects:
   - {fileID: 11400000, guid: 9fef2be5fecd83b45a72f628260ecc27, type: 2}
   - {fileID: 11400000, guid: 550a7c7fbfda35d408dda0d841521bef, type: 2}

@@ -54,7 +54,6 @@ public class ClickOnObject : MonoBehaviour
 
     public void ResetObject(Transform transform)
     {
-        Debug.Log("REST : " + currentObject.name);
         SetLayer(transform.gameObject, 0);
         // _blurBackground.SetActive(false);
 

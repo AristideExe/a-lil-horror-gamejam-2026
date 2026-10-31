@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: case_7
   m_EditorClassIdentifier: Assembly-CSharp::CaseData
   id: 7
-  context: "LA VALISE VOL\xC9E DE LA GARE DE VILLENEUVE\nUn lundi de novembre, le
-    joaillier Salomon Weil d\xE9pose \xE0 16h50 une valise grise contenant 60 000
-    \u20AC de bijoux dans le casier de consigne n\xB0318. \xC0 17h40, il revient
-    et trouve le casier vide. La valise est retrouv\xE9e vide \xE0 18h05 dans une
-    poubelle du quai 3. Entre 17h00 et 17h40, dix personnes travaillaient ou attendaient
-    autour du hall central et du couloir des consignes."
-  facts: "Ticket de consigne n\xB0318 \xE9dit\xE9 \xE0 16h50\nCasier ouvert avec
-    le bon code, sans effraction\nLa cam\xE9ra du couloir des consignes ne filme
-    pas l'entr\xE9e du casier\nAnnonce au micro \xE0 17h25 (train de 17h42 retard\xE9
-    de 12 minutes)\nUn homme avec un sac \xE0 dos orange a \xE9t\xE9 vu dans le hall\nValise
-    retrouv\xE9e \xE0 18h05 dans une poubelle du quai 3"
+  context: "THE STOLEN SUITCASE FROM VILLENEUVE STATION\nMonday evening, the jeweler
+    Salomon Weil dropped off at 4:50 p.m. a gray suitcase containing \u20AC60,000
+    in jewelry in locker no. 318. At 5:40 p.m., he finds the empty locker on his
+    way back. The suitcase was found empty at 6:05 p.m. in a trash bin on platform
+    3. Between 5:00 p.m. and 5:40 p.m., ten people were working or waiting around
+    the central hall and the locker corridor."
+  facts: "Detention ticket no. 318 issued at 4:50 p.m. \nLocker opened with the correct
+    code, no break-in \n The camera in the detention center hallway does not film
+    the locker entrance \n Anchor at the microphone at 5:25 p.m. (train from 5:42
+    p.m., delayed by 12 minutes)\nA man with an orange backpack was seen in the hall\nValise
+    found at 6:05 p.m. in a trash bin on platform 3."
   suspects:
   - {fileID: 11400000, guid: 18bf8c52b68e94e449baf4a9a25baac4, type: 2}
   - {fileID: 11400000, guid: 08995be4e4486524e8af1acdde80fc22, type: 2}

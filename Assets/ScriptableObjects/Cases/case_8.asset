@@ -13,17 +13,16 @@ MonoBehaviour:
   m_Name: case_8
   m_EditorClassIdentifier: Assembly-CSharp::CaseData
   id: 8
-  context: "LE MALAISE DU CRITIQUE AU BISTROT DES HALLES\nUn dimanche soir d'octobre,
-    \xE0 21h20, le critique gastronomique Jean-Marc Delaunay s'effondre \xE0 la table
-    7 du Bistrot des Halles. Les analyses r\xE9v\xE8lent un puissant somnif\xE8re
-    dans son verre de vin rouge (un Saint-\xC9milion). Le mois pr\xE9c\xE9dent, il
-    avait publi\xE9 une critique assassine du restaurant. Dix personnes ont pu s'approcher
-    de son verre entre 20h50 et 21h15."
-  facts: "Bouteille ouverte \xE0 la table 7 \xE0 20h50, verre rempli \xE0 20h52\nUne
-    personne hors personnel est entr\xE9e en cuisine \xE0 20h58\nLe dessert (tarte
-    tatin) a \xE9t\xE9 servi \xE0 21h10\nPoudre blanche retrouv\xE9e sur la serviette
-    du critique\nLa cam\xE9ra de la salle n'enregistre pas le son\nUn serveur en
-    tablier noir a \xE9t\xE9 vu pench\xE9 sur la table 7"
+  context: "THE UNEASE OF THE CRITIC AT THE BISTRO DES HALLES\nSunday evening, at
+    9:20 p.m., the gastronomic critic Jean-Marc Delaunay collapsed at table 7 of
+    the Bistrot des Halles. The analyses reveal a powerful sleeping pill in his glass
+    of red wine (a Saint-\xC9milion). The previous month, he had published a murderous
+    review of the restaurant. Ten people were able to approach his glass between
+    8:50 p.m. and 9:15 p.m."
+  facts: "Bottle opened at table 7 at 8:50 p.m., glass filled at 8:52 p.m. \nA non-staff
+    person entered the kitchen at 8:58 p.m. \nDessert (tarte tatin) Was served at
+    9:10 p.m. \nWhite powder found on the briefcase and the room camera did not record
+    the phone \nOne waiter in a black apron was seen leaning over table 7"
   suspects:
   - {fileID: 11400000, guid: 591e150cd1fe9984fa87dd8498ed1232, type: 2}
   - {fileID: 11400000, guid: 1460670b33a9c074191e3089ff8136f9, type: 2}

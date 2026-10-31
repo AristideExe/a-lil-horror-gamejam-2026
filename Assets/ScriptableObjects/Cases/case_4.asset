@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: case_4
   m_EditorClassIdentifier: Assembly-CSharp::CaseData
   id: 4
-  context: "L'INCENDIE DE LA CABANE DU GARDE, FOR\xCAT DE BR\xC9VANE\nUn samedi soir
-    de novembre, vers 19h30, la cabane du garde forestier Roger Vasseur prend feu
-    au c\u0153ur de la for\xEAt de Br\xE9vane. Le garde, absent, retrouve un bidon
-    d'essence vide \xE0 dix m\xE8tres des ruines et une empreinte de botte. L'incendie
-    a d\xE9truit ses registres de coupes de bois : il enqu\xEAtait depuis des mois
-    sur des abattages ill\xE9gaux. \xC0 cette heure, la for\xEAt \xE9tait fr\xE9quent\xE9e
-    par des chasseurs, des b\xFBcherons, des promeneurs et des apiculteurs."
+  context: "THE FIRE IN THE GUARD\u2019S CABIN, FOR\xCAT DE BR\xC9VANE\nSaturday
+    evening around 7:30 p.m., the hut of the forest ranger Roger Vasseur caught fire
+    in the heart of the forest of Br\xE9vane. The guard, absent, found an empty petrol
+    can ten meters from the ruins and a boot print. The fire destroyed his logging
+    records: he had been investigating illegal logging for months. At that time,
+    the forest was frequented by hunters, loggers, walkers and beekeepers."
   facts: "D\xE9part de feu estim\xE9 \xE0 19h30\nFum\xE9e aper\xE7ue depuis la cr\xEAte
     \xE0 19h35\nBarri\xE8re de l'all\xE9e des Ch\xEAnes ouverte depuis 19h05\nBidon
     d'essence de 5 litres, bouchon vert\nEmpreintes de bottes pointure 43, semelle

@@ -75,115 +75,115 @@ public class SuspectsManager : MonoBehaviour
         return fields;
     }
 
-    string GenerateAnswer(QuestionChoice choice, string answer)
+    public string GenerateAnswer(QuestionChoice choice, string answer)
     {
         switch (choice)
         {
             case QuestionChoice.Name:
                 switch (Random.Range(0, 6))
                 {
-                    case 0: return $"Je m'appelle {answer}.";
-                    case 1: return $"Mon nom ? {answer}.";
-                    case 2: return $"C'est {answer}, pourquoi ?";
-                    case 3: return $"Tu peux m'appeler {answer}.";
-                    case 4: return $"Mon nom est {answer}, retiens-le.";
-                    default: return $"C'est bien {answer} qui est écrit sur mes papiers.";
+                    case 0: return $"My name is {answer}.";
+                    case 1: return $"My name? {answer}.";
+                    case 2: return $"It's {answer}, why?";
+                    case 3: return $"You can call me {answer}.";
+                    case 4: return $"My name is {answer}, remember it.";
+                    default: return $"It's {answer} that's written on my ID.";
                 }
 
             case QuestionChoice.FirstName:
                 switch (Random.Range(0, 6))
                 {
-                    case 0: return $"Mon prénom, c'est {answer}.";
-                    case 1: return $"Je m'appelle {answer}.";
-                    case 2: return $"{answer}, tout simplement.";
-                    case 3: return $"C'est {answer}. Mes parents ont choisi.";
-                    case 4: return $"Pourquoi ? Tu veux m'appeler par mon prénom ?";
-                    default: return $"On m'a donné le prénom {answer}, oui.";
+                    case 0: return $"My first name is {answer}.";
+                    case 1: return $"My name is {answer}.";
+                    case 2: return $"{answer}, simple as that.";
+                    case 3: return $"It's {answer}. My parents chose it.";
+                    case 4: return $"Why? Do you want to call me by my first name?";
+                    default: return $"I was given the first name {answer}, yes.";
                 }
 
             case QuestionChoice.Pseudo:
                 switch (Random.Range(0, 6))
                 {
-                    case 0: return $"Mon pseudo, c'est {answer}.";
-                    case 1: return $"Tout le monde m'appelle {answer}.";
-                    case 2: return $"Sur Internet, c'est {answer}.";
-                    case 3: return $"{answer}. Ça te plaît ?";
-                    case 4: return $"J'utilise {answer}, ne me demande pas pourquoi.";
-                    default: return $"Tu peux me retrouver sous le nom {answer}.";
+                    case 0: return $"My nickname is {answer}.";
+                    case 1: return $"Everyone calls me {answer}.";
+                    case 2: return $"Online, it's {answer}.";
+                    case 3: return $"{answer}. Do you like it?";
+                    case 4: return $"I use {answer}, don't ask me why.";
+                    default: return $"You can find me under the name {answer}.";
                 }
 
             case QuestionChoice.Age:
                 switch (Random.Range(0, 7))
                 {
-                    case 0: return $"J'ai {answer} ans.";
-                    case 1: return $"J'ai {answer} ans, pourquoi ?";
-                    case 2: return $"Tu n'as pas appris à compter ? {answer} ans.";
-                    case 3: return $"{answer} ans. Et je les assume.";
-                    case 4: return $"Je suis âgé(e) de {answer} ans.";
-                    case 5: return $"Devine... Non, allez, j'ai {answer} ans.";
-                    default: return $"J'ai {answer} ans. Ça te suffit comme réponse ?";
+                    case 0: return $"I am {answer} years old.";
+                    case 1: return $"I'm {answer} years old, why?";
+                    case 2: return $"Didn't you learn how to count? {answer} years old.";
+                    case 3: return $"{answer} years old. And I own it.";
+                    case 4: return $"I am {answer} years old.";
+                    case 5: return $"Guess... No, come on, I'm {answer} years old.";
+                    default: return $"I'm {answer} years old. Is that answer enough for you?";
                 }
 
             case QuestionChoice.Sex:
                 switch (Random.Range(0, 6))
                 {
-                    case 0: return $"Je suis {answer}.";
-                    case 1: return $"Mon sexe ? {answer}.";
-                    case 2: return $"{answer}, si c'est vraiment ce que tu veux savoir.";
-                    case 3: return $"Je suis de sexe {answer}.";
-                    case 4: return $"C'est marqué quelque part, non ? {answer}.";
-                    default: return $"La réponse, c'est {answer}. Autre question ?";
+                    case 0: return $"I am {answer}.";
+                    case 1: return $"My gender? {answer}.";
+                    case 2: return $"{answer}, if that's really what you want to know.";
+                    case 3: return $"I am of {answer} sex.";
+                    case 4: return $"It's written somewhere, right? {answer}.";
+                    default: return $"The answer is {answer}. Next question?";
                 }
 
             case QuestionChoice.Work:
                 switch (Random.Range(0, 7))
                 {
-                    case 0: return $"Je travaille comme {answer}.";
-                    case 1: return $"Mon métier ? {answer}.";
-                    case 2: return $"Je suis {answer}, pour gagner ma vie.";
-                    case 3: return $"En ce moment, je travaille dans le domaine de {answer}.";
-                    case 4: return $"Je fais {answer}. Ça te pose un problème ?";
-                    case 5: return $"Je gagne ma vie en travaillant comme {answer}.";
-                    default: return $"Professionnellement, je suis {answer}.";
+                    case 0: return $"I work as a {answer}.";
+                    case 1: return $"My job? {answer}.";
+                    case 2: return $"I am a {answer}, to make a living.";
+                    case 3: return $"Right now, I work in the field of {answer}.";
+                    case 4: return $"I do {answer}. Got a problem with that?";
+                    case 5: return $"I earn my living working as a {answer}.";
+                    default: return $"Professionally, I am a {answer}.";
                 }
 
             case QuestionChoice.Height:
                 switch (Random.Range(0, 6))
                 {
-                    case 0: return $"Je mesure {answer}.";
-                    case 1: return $"Ma taille ? {answer}.";
-                    case 2: return $"Je fais {answer}, pourquoi ?";
-                    case 3: return $"En hauteur, je mesure {answer}.";
-                    case 4: return $"Dernière fois que j'ai vérifié, je faisais {answer}.";
-                    default: return $"Je mesure exactement {answer}, si ça t'intéresse.";
+                    case 0: return $"I am {answer} tall.";
+                    case 1: return $"My height? {answer}.";
+                    case 2: return $"I'm {answer}, why?";
+                    case 3: return $"Height-wise, I measure {answer}.";
+                    case 4: return $"Last time I checked, I was {answer}.";
+                    default: return $"I am exactly {answer}, if you're interested.";
                 }
 
             case QuestionChoice.Weight:
                 switch (Random.Range(0, 6))
                 {
-                    case 0: return $"Je pèse {answer}.";
-                    case 1: return $"Mon poids ? {answer}.";
-                    case 2: return $"Je fais {answer} sur la balance.";
-                    case 3: return $"Pourquoi tu veux savoir ça ? Je pèse {answer}.";
-                    case 4: return $"La dernière fois, la balance indiquait {answer}.";
-                    default: return $"Je pèse {answer}, voilà.";
+                    case 0: return $"I weigh {answer}.";
+                    case 1: return $"My weight? {answer}.";
+                    case 2: return $"I weigh {answer} on the scale.";
+                    case 3: return $"Why do you want to know that? I weigh {answer}.";
+                    case 4: return $"Last time, the scale showed {answer}.";
+                    default: return $"I weigh {answer}, there you go.";
                 }
 
             case QuestionChoice.Alibi:
                 switch (Random.Range(0, 8))
                 {
                     case 0: return $"{answer}.";
-                    case 1: return $"Je te l'ai déjà dit : {answer}.";
-                    case 2: return $"J'étais occupé(e) à {answer}.";
-                    case 3: return $"Pour faire simple : {answer}.";
-                    case 4: return $"Tu veux vraiment les détails ? {answer}.";
-                    case 5: return $"Je te jure que {answer}.";
-                    case 6: return $"C'est pourtant simple : {answer}.";
-                    default: return $"Si tu veux tout savoir, {answer}.";
+                    case 1: return $"I already told you: {answer}.";
+                    case 2: return $"I was busy {answer}.";
+                    case 3: return $"To keep it simple: {answer}.";
+                    case 4: return $"You really want the details? {answer}.";
+                    case 5: return $"I swear that {answer}.";
+                    case 6: return $"It's quite simple: {answer}.";
+                    default: return $"If you really must know, {answer}.";
                 }
 
             default:
-                return "Je ne sais pas quoi répondre à ça.";
+                return "I don't want to talk to you anymore.";
         }
     }
 

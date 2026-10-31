@@ -78,7 +78,8 @@ public enum QuestionChoice
     Work,
     Height,
     Weight,
-    Alibi
+    Alibi,
+    Null
 }
 
 public enum SuspectChoice
