@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,8 +44,7 @@ public class QuestionManager : MonoBehaviour
         Button Button = Parent.GetComponentInParent<Button>();
         Button.interactable = false;
 
-        if (TryGetComponent(out ClickOnObject cob))
-            cob.ResetObject(transform);
+        ClickOnObject.Instance.ResetObject(transform);
         
         // question impact
 
@@ -95,6 +96,7 @@ public class QuestionManager : MonoBehaviour
         int statusMax = 3;
         _suspect.status = Mathf.RoundToInt((_suspect.sad + _suspect.angry + _suspect.surprise + _suspect.happy) / 4 * statusMax);
 
-        RoomManager.Instance._allSuspects[_suspect].GetComponent<SuspectExpression>().UpdateFace(index);
-    } 
+        GameObject suspectGameobject = RoomManager.Instance._allSuspects[_suspect];
+        suspectGameobject.GetComponent<SuspectExpression>().UpdateFace(index);
+    }
 }

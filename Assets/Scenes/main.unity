@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a045a4c05b2f804d973ebcd0a575bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem
-  _dialogueBox: {fileID: 1328065847}
+  dialogueBox: {fileID: 1328065847}
   _name: {fileID: 710871551}
   _text: {fileID: 1668568285}
   _pageCount: {fileID: 2134417923}

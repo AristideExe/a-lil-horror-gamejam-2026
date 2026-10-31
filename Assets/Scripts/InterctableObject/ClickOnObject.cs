@@ -18,6 +18,7 @@ public class ClickOnObject : MonoBehaviour
     public static ClickOnObject Instance {private set; get;}
 
     public int _overlayLayerMask;
+    private Transform currentObject;
     [Header("Cameras")]
     public Camera _cam;
     public Camera _overlayCam;
@@ -44,7 +45,6 @@ public class ClickOnObject : MonoBehaviour
 
     void SetLayer(GameObject obj, int layer)
     {
-        Debug.Log("SETLAYER :" + obj.name);
         obj.layer = layer;
         foreach (Transform child in obj.transform)
         {
@@ -54,6 +54,7 @@ public class ClickOnObject : MonoBehaviour
 
     public void ResetObject(Transform transform)
     {
+        Debug.Log("REST : " + currentObject.name);
         SetLayer(transform.gameObject, 0);
         // _blurBackground.SetActive(false);
 
@@ -65,6 +66,11 @@ public class ClickOnObject : MonoBehaviour
         Button[] allButtons = GetComponentsInChildren<Button>();
         foreach (Button b in allButtons)
             b.enabled = false;
+
+        // Disable rotationScript
+        if (currentObject.TryGetComponent(out RotationScript rs))
+            rs.enabled = false;
+        this.enabled = true;
     }
 
     void Update()
@@ -80,6 +86,8 @@ public class ClickOnObject : MonoBehaviour
 
                 if (hit.transform.TryGetComponent(out IObject obj))
                 {
+                    currentObject = hit.transform;
+
                     // Remember everything
                     _oldParent = hit.transform.parent;      
                     _oldPos = hit.transform.position;   

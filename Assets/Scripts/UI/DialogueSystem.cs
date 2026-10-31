@@ -12,7 +12,7 @@ public class DialogueSystem : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    [SerializeField] GameObject _dialogueBox;
+    [SerializeField] public GameObject dialogueBox;
     [SerializeField] TextMeshProUGUI _name;
     [SerializeField] TextMeshProUGUI _text;
     [SerializeField] TextMeshProUGUI _pageCount;
@@ -27,7 +27,7 @@ public class DialogueSystem : MonoBehaviour
         // this function allow us to show a diaologue in game
         if (suspect.status == 3) return;
 
-        _dialogueBox.SetActive(true);
+        dialogueBox.SetActive(true);
         _name.text = name;
         _text.text = text;
         _text.pageToDisplay = 0;
@@ -64,25 +64,60 @@ public class DialogueSystem : MonoBehaviour
 
         tmpText.maxVisibleCharacters = startIndex;
         yield return null; // Wait one fram to avoid skipping the animation
+        StartCoroutine(MouthTalking(head));
         for (int i = startIndex; i <= lastIndex; i++)
         {
-            if (Input.anyKeyDown)
-            {
-                tmpText.maxVisibleCharacters = lastIndex;
-                break;
-            }
-
             tmpText.maxVisibleCharacters = i;
-            yield return new WaitForSeconds(_delay);
 
-            // Animate the mouth
-            float angle = i * (2f * Mathf.PI / 5);
-            float mouthOpen = Mathf.Abs(Mathf.Sin(angle));
-            head.SetBlendShapeWeight(11, (int)(mouthOpen*100));            
+            float timer = 0f;
+            while (timer < _delay)
+            {
+                if (Input.anyKeyDown)
+                {
+                    tmpText.maxVisibleCharacters = lastIndex;
+                    head.SetBlendShapeWeight(11, 0); 
+                    _isTyping = false;
+                    yield break;
+                }
+
+                timer += Time.deltaTime;
+                yield return null;
+            }
         }
 
         yield return null; 
         _isTyping = false;
+    }
+
+    Quaternion rot = Quaternion.identity;
+    Vector3 pos = Vector3.one;
+    IEnumerator MouthTalking(SkinnedMeshRenderer head)
+    {
+        Animator anim =  RoomManager.Instance._allSuspects[_suspect].GetComponent<Animator>();
+
+        if (!anim.GetBool("talking"))
+        {
+            rot = Camera.main.transform.rotation;
+            pos = Camera.main.transform.localPosition;
+            Camera.main.transform.LookAt(head.transform);
+            Camera.main.transform.localPosition = new Vector3(0,1.3f,0);
+        }
+
+        anim.SetBool("talking", true);
+
+        while (dialogueBox.activeInHierarchy)
+        {
+            // Animate the mouth
+            float speed = 15f;
+            float mouthOpen = Mathf.Abs(Mathf.Sin(Time.time * speed)/3f);
+            head.SetBlendShapeWeight(11, (int)(mouthOpen * 100));
+            yield return null;
+        }
+        head.SetBlendShapeWeight(11, 0);
+        Camera.main.transform.rotation = rot;
+        Camera.main.transform.localPosition = pos;
+
+        anim.SetBool("talking", false);
     }
 
     int GetFirstIndex(TextMeshProUGUI tmpText)
@@ -134,7 +169,7 @@ public class DialogueSystem : MonoBehaviour
         }
         else
         {
-            _dialogueBox.SetActive(false);
+            dialogueBox.SetActive(false);
         }
     }
 
